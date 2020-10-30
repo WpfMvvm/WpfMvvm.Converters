@@ -7,6 +7,7 @@ namespace WpfMvvm.Converters
 {
     /// <summary>Возвращает экземпляр <see cref="DebugConverter"/>.<br/>
     /// Если задан <see cref="Converter"/>, то они соединяются в цепочку.</summary>
+    [MarkupExtensionReturnType(typeof(IValueConverter))]
     public class DebugConverterExtension : MarkupExtension
     {
         /// <summary>Конвертер для цепочки.<br/>

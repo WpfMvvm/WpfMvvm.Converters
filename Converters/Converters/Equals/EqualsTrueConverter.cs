@@ -4,8 +4,10 @@ using System.Windows.Data;
 
 namespace WpfMvvm.Converters
 {
+
     /// <summary>Конвертер сравнивает значение и параметр. Если они не равны, то возвращается <see cref="Binding.DoNothing"/>.</summary>
     /// <remarks>Можно использовать для привязки RadioButton одной группы.</remarks>
+    [ValueConversion(typeof(object), typeof(bool))]
     public class EqualsTrueConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -23,5 +25,8 @@ namespace WpfMvvm.Converters
         }
         /// <summary>Экземпляр конвертера.</summary>
         public static EqualsTrueConverter Instance { get; } = new EqualsTrueConverter();
+
+        /// <summary>Инверсный экземпляр конвертера.</summary>
+        public static ReadOnlyChainOfConverters NotInstance { get; } = new ReadOnlyChainOfConverters(BooleanNotConverter.Instance, Instance);
     }
 }

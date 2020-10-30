@@ -4,14 +4,15 @@ using System.Windows.Data;
 
 namespace WpfMvvm.Converters
 {
-    /// <summary>Возвращает тип значения.</summary>
-    /// <returns><c>value?.GetType()</c></returns>
+    /// <summary>Конвертер возвращает результат сравнения vaue и parameter.</summary>
     /// <remarks>Обратное преобразование не реализованно.</remarks>
-    [ValueConversion(typeof(object), typeof(Type))]
-    public class GetTypeConverter : IValueConverter
+    [ValueConversion(typeof(object), typeof(bool))]
+    public class EqualsConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-            => value?.GetType();
+        {
+            return object.Equals(value, parameter);
+        }
 
         /// <summary>Не реализован.</summary>
         /// <exception cref="NotImplementedException">Всегда.</exception>
@@ -21,7 +22,9 @@ namespace WpfMvvm.Converters
         }
 
         /// <summary>Экземпляр конвертера.</summary>
-        public static GetTypeConverter Instance { get; } = new GetTypeConverter();
+        public static EqualsConverter Instance { get; } = new EqualsConverter();
 
+        /// <summary>Инверсный экземпляр конвертера.</summary>
+        public static ReadOnlyChainOfConverters NotInstance { get; } = new ReadOnlyChainOfConverters(BooleanNotConverter.Instance, Instance);
     }
 }

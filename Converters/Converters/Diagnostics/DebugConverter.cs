@@ -6,6 +6,8 @@ using System.Windows.Data;
 namespace WpfMvvm.Converters
 {
     /// <summary>Конвертер для трассировки привязок.</summary>
+    [ValueConversion(typeof(object), typeof(object))]
+
     public class DebugConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)

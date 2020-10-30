@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Windows.Data;
 using System.Windows.Markup;
 
 namespace WpfMvvm.Converters
 {
     /// <summary>Предоставляет один из экземпляров <see cref="BooleanNotConverter"/>: <see cref="BooleanToVisibilityConverter.Instance"/>, <see cref="BooleanToVisibilityHiddenConverter.Instance"/>, <see cref="BooleanToVisibilityConverter.NotInstance"/>, <see cref="BooleanToVisibilityHiddenConverter.NotInstance"/>.</summary>
+    [MarkupExtensionReturnType(typeof(IValueConverter))]
     public class BooleanToVisibilityExtension : MarkupExtension
     {
         /// <summary>Какой из конвертеров будет использован.</summary>

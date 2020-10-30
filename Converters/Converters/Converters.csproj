@@ -79,8 +79,9 @@
     <Compile Include="Dictionaries\DictionaryConverterExtension .cs" />
     <Compile Include="EnumValues\EnumValuesConverter.cs" />
     <Compile Include="EnumValues\EnumValuesConverterExtension.cs" />
-    <Compile Include="EqualsTrue\EqualsTrueConverter.cs" />
-    <Compile Include="EqualsTrue\EqualsTrueConverterExtension.cs" />
+    <Compile Include="Equals\EqualsConverter.cs" />
+    <Compile Include="Equals\EqualsTrueConverter.cs" />
+    <Compile Include="Equals\EqualsTrueConverterExtension.cs" />
     <Compile Include="GetType\GetTypeConverter.cs" />
     <Compile Include="GetType\GetTypeConverterExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -96,6 +97,8 @@
     <Compile Include="ValueType\ValueTypeConverter.cs" />
     <Compile Include="ValueType\ValueTypeConverterExtension.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="package.nuspec" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

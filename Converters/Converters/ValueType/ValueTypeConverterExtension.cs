@@ -5,6 +5,7 @@ namespace WpfMvvm.Converters
 {
     /// <summary>Возвращает экземпляр <see cref="ValueTypeConverter"/> с заданными типами.<br/>
     /// Для получения экземпляра используется метод <see cref="StaticMethodsOfConverters.GetValueTypeConverter(Type, Type)"/>.</summary>
+    [MarkupExtensionReturnType(typeof(ValueTypeConverter))]
     public class ValueTypeConverterExtension : MarkupExtension
     {
         /// <inheritdoc cref="ValueTypeConverter.SourceType"/>

@@ -9,6 +9,8 @@ namespace WpfMvvm.Converters
     /// <returns> <see cref="Array"/> со значениями полученного типа перечисления.
     /// Если value не тип перечисления и не значение перечисления, тогда проверяется parameter.
     /// </returns>
+    [ValueConversion(typeof(Enum), typeof(Array))]
+
     public class EnumValuesConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)

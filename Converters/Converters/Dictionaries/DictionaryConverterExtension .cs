@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Markup;
-using System.Windows.Media.Animation;
 
 namespace WpfMvvm.Converters
 {

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <!--*-->
+    <id>WpfMvvm.Converters</id>
+    <!--*-->
+    <version>0.0.0</version>
+    <title>Converters</title>
+    <!--*-->
+    <authors>EldHasp</authors>
+    <owners>EldHasp</owners>
+    <!--
+    <licenseUrl></licenseUrl>
+    <projectUrl></projectUrl>
+    <iconUrl></iconUrl>
+-->
+    <license type="expression">BSD-2-Clause OR MIT</license>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!--*-->
+    <description>WPF конвертеры</description>
+    <!--*-->
+    <releaseNotes>Первая загрузка</releaseNotes>
+    <copyright>Copyright ©  2020</copyright>
+    <tags>WPF MVVM IValueConverter Conveter</tags>
+    <dependencies>
+      <!--
+      <dependency id="SampleDependency" version="1.0" />
+-->
+    </dependencies>
+  </metadata>
+</package>

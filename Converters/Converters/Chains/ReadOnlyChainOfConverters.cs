@@ -20,10 +20,10 @@ namespace WpfMvvm.Converters
         /// <param name="converters">Цепочка конвертеров.</param>
         public ReadOnlyChainOfConverters(IEnumerable<IValueConverter> converters)
         {
-            var list = converters?.Where(cnv => cnv != null).ToList();
-            if (list == null || list.Count == 0)
+            if (converters == null || !converters.Any(cnv => cnv != null))
                  throw new ArgumentNullException(nameof(converters), "Должен быть передан хоть один конвертер");
-            Converters = list.AsReadOnly();
+
+            Converters = converters.Where(cnv => cnv != null).ToList().AsReadOnly();
         }
 
         /// <summary>Создаёт конвертер из заданной неизменяемой цепочки конвертеров.</summary>
