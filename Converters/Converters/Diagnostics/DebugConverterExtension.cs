@@ -10,15 +10,25 @@ namespace WpfMvvm.Converters
     [MarkupExtensionReturnType(typeof(IValueConverter))]
     public class DebugConverterExtension : MarkupExtension
     {
+
         /// <summary>Конвертер для цепочки.<br/>
         /// Если <see langword="null"/> - возвращается <see cref="DebugConverter.Instance"/>.</summary>
         public IValueConverter Converter { get; set; }
 
-        /// <summary>Последовательность конвертеров в цепочке:<br/>
-        /// <see langword="true"/> - <see cref="DebugConverter"/> в начале;<br/>
-        /// <see langword="false"/> - <see cref="DebugConverter"/> в конце;<br/>
-        /// <see langword="null"/> - <see cref="DebugConverter"/> и перед, и после <see cref="Converter"/>.</summary>
-        public bool? IsAfterOrBefore { get; set; }
+        /// <summary>Последовательность конвертеров в цепочке.</summary>
+        public AfterBeforeEnum AfterBefore
+        {
+            get => afterBefore;
+            set
+            {
+                if (!Enum.IsDefined(typeof(AfterBeforeEnum), value))
+                    throw new ArgumentException("Недопустимое значение.", nameof(value));
+
+                afterBefore = value;
+            }
+        }
+        private AfterBeforeEnum afterBefore = AfterBeforeEnum.After;
+
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
             if (Converter == null)
@@ -26,15 +36,15 @@ namespace WpfMvvm.Converters
 
             var list = new List<IValueConverter>();
 
-            if (IsAfterOrBefore != false)
+            if (AfterBefore.HasFlag(AfterBeforeEnum.Before))
                 list.Add(DebugConverter.Instance);
 
             list.Add(Converter);
- 
-            if (IsAfterOrBefore != true)
+
+            if (AfterBefore.HasFlag(AfterBeforeEnum.After))
                 list.Add(DebugConverter.Instance);
 
             return new ReadOnlyChainOfConverters(list);
-       }
+        }
     }
 }

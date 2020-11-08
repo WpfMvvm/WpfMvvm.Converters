@@ -10,7 +10,7 @@ namespace WpfMvvm.Converters
     /// <summary>Цепочка конвертеров применяемая к входному значению.</summary>
     [ValueConversion(typeof(object), typeof(object))]
     [ContentProperty(nameof(Converters))]
-    public class ChainOfConverters : IValueConverter
+    public partial class ChainOfConverters : IValueConverter
     {
         /// <summary>Цепочка конвертеров.</summary>
         public List<IValueConverter> Converters { get; set; } = new List<IValueConverter>();

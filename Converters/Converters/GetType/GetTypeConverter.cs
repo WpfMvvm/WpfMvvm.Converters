@@ -6,7 +6,7 @@ namespace WpfMvvm.Converters
 {
     /// <summary>Возвращает тип значения.</summary>
     /// <returns><c>value?.GetType()</c></returns>
-    /// <remarks>Обратное преобразование не реализованно.</remarks>
+    /// <remarks>Обратное преобразование не реализовано.</remarks>
     [ValueConversion(typeof(object), typeof(Type))]
     public class GetTypeConverter : IValueConverter
     {

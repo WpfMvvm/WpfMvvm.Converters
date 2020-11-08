@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Windows.Documents;
-using System.Windows.Markup;
 
 namespace WpfMvvm.Converters
 {
+    // Реализация IDictionary. Создана "Быстрыми Решениями" Visual Studio. 
     public partial class DictionaryConverterExtension : IDictionary
     {
         public object this[object key] { get => Dictionary[key]; set => Dictionary[key] = value; }

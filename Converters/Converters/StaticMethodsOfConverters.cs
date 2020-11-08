@@ -6,12 +6,12 @@ using System.Windows;
 
 namespace WpfMvvm.Converters
 {
-    /// <summary>Абстрактный базовый класс</summary>
+    /// <summary>Статический класс с методами для различных конвертеров.</summary>
     public static partial class StaticMethodsOfConverters
     {
         /// <summary>Конвертация <see cref="bool"/> в заданный тип.</summary>
         /// <param name="value">Конвертируемое значение.</param>
-        /// <param name="targetType">Тип в который должно быть конвертированно значение.</param>
+        /// <param name="targetType">Тип в который должно быть конвертировано значение.</param>
         /// <returns><see cref="string"/> если целевой тип совместим с <see cref="string"/>,
         /// <see cref="bool"/> для всех остальных типов.</returns>
         public static object ConvertToType(this bool value, Type targetType, CultureInfo culture)
@@ -24,7 +24,7 @@ namespace WpfMvvm.Converters
 
         /// <summary>Конвертация <see cref="Visibility"/> в заданный тип.</summary>
         /// <param name="value">Конвертируемое значение.</param>
-        /// <param name="targetType">Тип в который должно быть конвертированно значение.</param>
+        /// <param name="targetType">Тип в который должно быть конвертировано значение.</param>
         /// <returns><see cref="string"/> если целевой тип совместим с <see cref="string"/>,
         /// <see cref="Visibility"/> для всех остальных типов.</returns>
         public static object ConvertToType(this Visibility value, Type targetType)
@@ -70,7 +70,7 @@ namespace WpfMvvm.Converters
                 return true;
             }
 
-            if (value is string str && Visibility.TryParse(str, true, out visibility))
+            if (value is string str && Enum.TryParse(str, true, out visibility))
             {
                 result = visibility;
                 return true;

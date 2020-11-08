@@ -1,0 +1,483 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WpfMvvm.Converters</name>
+    </assembly>
+    <members>
+        <member name="T:WpfMvvm.Converters.BooleanNotConverter">
+            <summary>Инвертирует полученное логическое значение.</summary>
+            <remarks>Если приходит <see cref="T:System.String"/>, то значение конвертируется 
+            в <see cref="T:System.Boolean"/> методом <see cref="M:System.Boolean.TryParse(System.String,System.Boolean@)"/>.</remarks>
+            <returns>Если значение не <see cref="T:System.Boolean"/> или <see cref="T:System.String"/>, конвертируемое в <see cref="T:System.Boolean"/> - возвращается <see cref="F:System.Windows.DependencyProperty.UnsetValue"/>.</returns>
+        </member>
+        <member name="P:WpfMvvm.Converters.BooleanNotConverter.Instance">
+            <summary>Экземпляр конвертера.</summary>
+        </member>
+        <member name="T:WpfMvvm.Converters.BooleanNotConverterExtension">
+            <summary>Предоставляет экземпляр <see cref="T:WpfMvvm.Converters.BooleanNotConverter"/> из <see cref="P:WpfMvvm.Converters.BooleanNotConverter.Instance"/>.</summary>
+        </member>
+        <member name="T:WpfMvvm.Converters.BooleanToVisibilityConverter">
+            <summary>Конвертер преобразующий <see cref="T:System.Boolean"/> в <see cref="T:System.Windows.Visibility"/>.</summary>
+            <remarks>Если приходит <see cref="T:System.String"/>, то значение конвертируется 
+            в <see cref="T:System.Boolean"/> методом <see cref="M:System.Boolean.TryParse(System.String,System.Boolean@)"/>.</remarks>
+            <returns>Если значение не <see cref="T:System.Boolean"/> или <see cref="T:System.String"/>, конвертируемое в <see cref="T:System.Boolean"/> - возвращается <see cref="F:System.Windows.DependencyProperty.UnsetValue"/>.<br/>
+            <see cref="F:System.Windows.Visibility.Visible"/> если <paramref name="value"/> <see langword="true"/>, иначе - <see cref="F:System.Windows.Visibility.Collapsed"/>.</returns>
+        </member>
+        <member name="M:WpfMvvm.Converters.BooleanToVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>Прямая конвертация <see cref="T:System.Boolean"/> в <see cref="T:System.Windows.Visibility"/>.</summary>
+            <param name="value">Значение для конвертации. Если оно не приводимо к <see cref="T:System.Boolean"/>, то возвращается <see cref="F:System.Windows.DependencyProperty.UnsetValue"/>.</param>
+            <param name="targetType">Целевой тип</param>
+            <param name="parameter">Не используется.</param>
+            <param name="culture">Не используется</param>
+            <returns><see cref="F:System.Windows.Visibility.Visible"/> если <paramref name="value"/>=<see langword="true"/>.</returns>
+        </member>
+        <member name="M:WpfMvvm.Converters.BooleanToVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>Обратная конвертация <see cref="T:System.Windows.Visibility"/> в <see cref="T:System.Boolean"/>.</summary>
+            <param name="value">Значение для конвертации. Если оно не приводимо к <see cref="T:System.Windows.Visibility"/>, то возвращается <see cref="F:System.Windows.DependencyProperty.UnsetValue"/>.</param>
+            <param name="targetType">Целевой тип</param>
+            <param name="parameter">Не используется.</param>
+            <param name="culture">Не используется</param>
+            <returns><see langword="true"/> если <paramref name="value"/> = <see cref="F:System.Windows.Visibility.Visible"/>, иначе - <see langword="false"/>.</returns>
+        </member>
+        <member name="P:WpfMvvm.Converters.BooleanToVisibilityConverter.Instance">
+            <summary>Экземпляр конвертера.</summary>
+        </member>
+        <member name="P:WpfMvvm.Converters.BooleanToVisibilityConverter.NotInstance">
+            <summary>Экземпляр конвертера инверсный к <see cref="P:WpfMvvm.Converters.BooleanToVisibilityConverter.Instance"/>.</summary>
+        </member>
+        <member name="T:WpfMvvm.Converters.BooleanToVisibilityExtension">
+            <summary>Предоставляет один из экземпляров <see cref="T:WpfMvvm.Converters.BooleanNotConverter"/>: <see cref="P:WpfMvvm.Converters.BooleanToVisibilityConverter.Instance"/>, <see cref="P:WpfMvvm.Converters.BooleanToVisibilityHiddenConverter.Instance"/>, <see cref="P:WpfMvvm.Converters.BooleanToVisibilityConverter.NotInstance"/>, <see cref="P:WpfMvvm.Converters.BooleanToVisibilityHiddenConverter.NotInstance"/>.</summary>
+        </member>
+        <member name="P:WpfMvvm.Converters.BooleanToVisibilityExtension.Mode">
+            <summary>Какой из конвертеров будет использован.</summary>
+        </member>
+        <member name="T:WpfMvvm.Converters.BooleanToVisibilityHiddenConverter">
+            <summary>Конвертер преобразующий <see cref="T:System.Boolean"/> в <see cref="T:System.Windows.Visibility"/>.</summary>
+            <remarks>Если приходит <see cref="T:System.String"/>, то значение конвертируется 
+            в <see cref="T:System.Boolean"/> методом <see cref="M:System.Boolean.TryParse(System.String,System.Boolean@)"/>.</remarks>
+            <returns>Если значение не <see cref="T:System.Boolean"/> или <see cref="T:System.String"/>, конвертируемое в <see cref="T:System.Boolean"/> - возвращается <see cref="F:System.Windows.DependencyProperty.UnsetValue"/>.<br/>
+            <see cref="F:System.Windows.Visibility.Visible"/> если <paramref name="value"/> <see langword="true"/>, иначе - <see cref="F:System.Windows.Visibility.Hidden"/>.</returns>
+        </member>
+        <member name="M:WpfMvvm.Converters.BooleanToVisibilityHiddenConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <inheritdoc cref="M:WpfMvvm.Converters.BooleanToVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)"/>
+        </member>
+        <member name="M:WpfMvvm.Converters.BooleanToVisibilityHiddenConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>Экземпляр конвертера.</summary>
+        </member>
+        <member name="P:WpfMvvm.Converters.BooleanToVisibilityHiddenConverter.Instance">
+            <inheritdoc cref="P:WpfMvvm.Converters.BooleanToVisibilityConverter.Instance"/>
+        </member>
+        <member name="P:WpfMvvm.Converters.BooleanToVisibilityHiddenConverter.NotInstance">
+            <summary>Экземпляр конвертера инверсный к <see cref="P:WpfMvvm.Converters.BooleanToVisibilityHiddenConverter.Instance"/>.</summary>
+        </member>
+        <member name="T:WpfMvvm.Converters.BooleanToVisibilityModeEnum">
+            <summary>Перечисление какой из конвертеров надо использовать.</summary>
+        </member>
+        <member name="F:WpfMvvm.Converters.BooleanToVisibilityModeEnum.Normal">
+            <summary>С <see cref="F:System.Windows.Visibility.Collapsed"/> без инверсии.</summary>
+        </member>
+        <member name="F:WpfMvvm.Converters.BooleanToVisibilityModeEnum.Not">
+            <summary>С <see cref="F:System.Windows.Visibility.Collapsed"/> и инверсией.</summary>
+        </member>
+        <member name="F:WpfMvvm.Converters.BooleanToVisibilityModeEnum.Hidden">
+            <summary>С <see cref="F:System.Windows.Visibility.Hidden"/> без инверсии.</summary>
+        </member>
+        <member name="F:WpfMvvm.Converters.BooleanToVisibilityModeEnum.NotHiden">
+            <summary>С <see cref="F:System.Windows.Visibility.Hidden"/> и инверсией.</summary>
+        </member>
+        <member name="T:WpfMvvm.Converters.ChainOfConverters">
+            <summary>Цепочка конвертеров применяемая к входному значению.</summary>
+        </member>
+        <member name="P:WpfMvvm.Converters.ChainOfConverters.Converters">
+            <summary>Цепочка конвертеров.</summary>
+        </member>
+        <member name="T:WpfMvvm.Converters.ReadOnlyChainOfConverters">
+            <summary>Неизменяемая цепочка конвертеров применяемая к входному значению.</summary>
+        </member>
+        <member name="P:WpfMvvm.Converters.ReadOnlyChainOfConverters.Converters">
+            <summary>Неизменяемая цепочка конвертеров.</summary>
+        </member>
+        <member name="M:WpfMvvm.Converters.ReadOnlyChainOfConverters.#ctor(System.Collections.Generic.IEnumerable{System.Windows.Data.IValueConverter})">
+            <summary>Создаёт конвертер из последовательности конвертеров.</summary>
+            <param name="converters">Последовательность конвертеров.</param>
+        </member>
+        <member name="M:WpfMvvm.Converters.ReadOnlyChainOfConverters.#ctor(System.Windows.Data.IValueConverter[])">
+            <summary>Создаёт конвертер из массива конвертеров.</summary>
+            <param name="converters">Массив конвертеров или их список в параметрах.</param>
+        </member>
+        <member name="T:WpfMvvm.Converters.AfterBeforeEnum">
+            <summary>Перечисление расположения <see cref="T:WpfMvvm.Converters.DebugConverter"/> по отношению к другому конвертеру.</summary>
+        </member>
+        <member name="F:WpfMvvm.Converters.AfterBeforeEnum.After">
+            <summary>После.</summary>
+        </member>
+        <member name="F:WpfMvvm.Converters.AfterBeforeEnum.Before">
+            <summary>Спереди.</summary>
+        </member>
+        <member name="F:WpfMvvm.Converters.AfterBeforeEnum.AfterAndBefore">
+            <summary>И спереди, и после.</summary>
+        </member>
+        <member name="T:WpfMvvm.Converters.DebugConverter">
+            <summary>Конвертер для трассировки привязок.</summary>
+            <remarks>Отправляет в Окно Вывода сообщения при вызове методов <see cref="M:WpfMvvm.Converters.DebugConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)"/> и <see cref="M:WpfMvvm.Converters.DebugConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)"/>.</remarks>
+        </member>
+        <member name="P:WpfMvvm.Converters.DebugConverter.Instance">
+            <summary>Экземпляр конвертера.</summary>
+        </member>
+        <member name="T:WpfMvvm.Converters.DebugConverterExtension">
+            <summary>Возвращает экземпляр <see cref="T:WpfMvvm.Converters.DebugConverter"/>.<br/>
+            Если задан <see cref="P:WpfMvvm.Converters.DebugConverterExtension.Converter"/>, то они соединяются в цепочку.</summary>
+        </member>
+        <member name="P:WpfMvvm.Converters.DebugConverterExtension.Converter">
+            <summary>Конвертер для цепочки.<br/>
+            Если <see langword="null"/> - возвращается <see cref="P:WpfMvvm.Converters.DebugConverter.Instance"/>.</summary>
+        </member>
+        <member name="P:WpfMvvm.Converters.DebugConverterExtension.AfterBefore">
+            <summary>Последовательность конвертеров в цепочке.</summary>
+        </member>
+        <member name="T:WpfMvvm.Converters.DictionaryConverter">
+            <summary>Конвертер преобразующий ключ в значение по словарю.</summary>
+            <summary>Конвертер преобразующий ключ в значение по словарю.</summary>
+        </member>
+        <member name="M:WpfMvvm.Converters.DictionaryConverter.#ctor">
+            <summary>Инициализирует новый экземпляр конвертера <see cref="T:WpfMvvm.Converters.DictionaryConverter"/>.<br/>
+            В <see cref="P:WpfMvvm.Converters.DictionaryConverter.Dictionary"/> записывается новый экземпляр <c>new Dictionary&lt;Type, object&gt;()</c>.</summary>
+        </member>
+        <member name="M:WpfMvvm.Converters.DictionaryConverter.#ctor(System.Collections.IDictionary)">
+            <summary>Инициализирует новый экземпляр конвертера <see cref="T:WpfMvvm.Converters.DictionaryConverter"/> переданным словарём.</summary>
+            <param name="dictionary">Cловарь записываемый в <see cref="P:WpfMvvm.Converters.DictionaryConverter.Dictionary"/>.</param>
+        </member>
+        <member name="M:WpfMvvm.Converters.DictionaryConverter.#cctor">
+            <summary>Записывает в <see cref="P:WpfMvvm.Converters.DictionaryConverter.Instance"/> статический замороженный экземпляр конвертера.</summary>
+        </member>
+        <member name="P:WpfMvvm.Converters.DictionaryConverter.Dictionary">
+            <summary>Словарь для поиска значений.<br/>
+            Используется в случае когда в parameter нет словаря.</summary>
+        </member>
+        <member name="F:WpfMvvm.Converters.DictionaryConverter.DictionaryProperty">
+            <summary>Using a DependencyProperty as the backing store for Dictionary.  This enables animation, styling, binding, etc...</summary>
+        </member>
+        <member name="P:WpfMvvm.Converters.DictionaryConverter.Instance">
+            <summary>Экземпляр конвертера.<br/>
+            Экземпляр заморожен: свойство <see cref="P:WpfMvvm.Converters.DictionaryConverter.Dictionary"/>=<see langword="null"/> и неизменяемо.<br/>
+            Словарь должен передаваться через parameters метода <see cref="M:WpfMvvm.Converters.DictionaryConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)"/>.</summary>
+        </member>
+        <member name="M:WpfMvvm.Converters.DictionaryConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>Возвращает значение из словаря по заданному ключу.</summary>
+            <param name="value">Ключ.</param>
+            <param name="targetType">Не используется.</param>
+            <param name="parameter">Если содержит словарь, то поиск производится по нему.
+            Иначе используется словарь из <see cref="P:WpfMvvm.Converters.DictionaryConverter.Dictionary"/>.</param>
+            <param name="culture">Не используется.</param>
+            <returns>Найденное значение ключа или <see cref="F:System.Windows.DependencyProperty.UnsetValue"/>.<br/>
+            Если ни в <paramref name="parameter"/>, ни в <see cref="P:WpfMvvm.Converters.DictionaryConverter.Dictionary"/> нет словаря - возвращается <see cref="F:System.Windows.DependencyProperty.UnsetValue"/>.</returns>
+        </member>
+        <member name="M:WpfMvvm.Converters.DictionaryConverter.GetValue(System.Collections.IDictionary,System.Object)">
+            <summary>Возвращает значение из словаря по полученному ключу.<br/>
+            Может быть переопределён в производных классах.</summary>
+            <param name="dictionary">Словарь для поиска. Не может быть <see langword="null"/>.</param>
+            <param name="key">Значение. Не может быть <see langword="null"/>.</param>
+            <returns><see cref="T:System.Object"/> со значением.</returns>
+        </member>
+        <member name="M:WpfMvvm.Converters.DictionaryConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>Не реализован.</summary>
+            <returns>Всегда исключение <see cref="T:System.NotImplementedException"/>.</returns>
+            <exception cref="T:System.NotImplementedException">Всегда.</exception>
+        </member>
+        <member name="T:WpfMvvm.Converters.DictionaryConverterExtension">
+            <summary>Возвращает <see cref="P:WpfMvvm.Converters.DictionaryConverter.Instance"/> 
+            или создаёт экземпляр конвертера со словарём с заданными типами ключа и значения.</summary>
+            <remarks>Нельзя одновремено задавать элементы словарю <see cref="P:WpfMvvm.Converters.DictionaryConverterExtension.Dictionary"/> и привязку <see cref="P:WpfMvvm.Converters.DictionaryConverterExtension.Binding"/>.<br/>
+            Если не заданы элементы <see cref="P:WpfMvvm.Converters.DictionaryConverterExtension.Dictionary"/> и привязка <see cref="P:WpfMvvm.Converters.DictionaryConverterExtension.Binding"/>, то возвращается один из статических экземпляров:
+            <see cref="P:WpfMvvm.Converters.DictionaryConverter.Instance"/>, <see cref="P:WpfMvvm.Converters.DictionaryTypeConverter.InstanceUseBaseTypes"/>
+            или <see cref="P:WpfMvvm.Converters.DictionaryTypeConverter.InstanceNotUseBaseTypes"/>.</remarks>
+        </member>
+        <member name="M:WpfMvvm.Converters.DictionaryConverterExtension.#ctor(System.Boolean)">
+            <summary>Задаёт свойство <see cref="P:WpfMvvm.Converters.DictionaryConverterExtension.UseBasicTypes"/>.</summary>
+            <param name="useBaseTypes">Значение для свойства <see cref="P:WpfMvvm.Converters.DictionaryTypeConverter.UseBasicTypes"/>.</param>
+        </member>
+        <member name="M:WpfMvvm.Converters.DictionaryConverterExtension.#ctor(System.Type,System.Type)">
+            <summary>Задаёт тип ключа и тип значения.</summary>
+            <param name="keyType">Тип ключа.</param>
+            <param name="valueType">Тип значения.</param>
+        </member>
+        <member name="M:WpfMvvm.Converters.DictionaryConverterExtension.#ctor(System.Boolean,System.Type,System.Type)">
+            <summary>Задаёт свойство <see cref="P:WpfMvvm.Converters.DictionaryConverterExtension.UseBasicTypes"/>, тип ключа и тип значения.</summary>
+            <param name="keyType">Тип ключа.</param>
+            <param name="valueType">Тип значения.</param>
+            <param name="useBaseTypes">Значение для свойства <see cref="P:WpfMvvm.Converters.DictionaryTypeConverter.UseBasicTypes"/>.</param>
+        </member>
+        <member name="M:WpfMvvm.Converters.DictionaryConverterExtension.#ctor(System.Type,System.Type,System.Boolean)">
+            <summary>Задаёт тип ключа, тип значения и свойство <see cref="P:WpfMvvm.Converters.DictionaryConverterExtension.UseBasicTypes"/>.</summary>
+            <param name="keyType">Тип ключа.</param>
+            <param name="valueType">Тип значения.</param>
+            <param name="useBaseTypes">Значение для свойства <see cref="P:WpfMvvm.Converters.DictionaryTypeConverter.UseBasicTypes"/>.</param>
+        </member>
+        <member name="M:WpfMvvm.Converters.DictionaryConverterExtension.#ctor">
+            <summary>Создаёт экземпляр со свойствами по умолчанию.</summary>
+        </member>
+        <member name="P:WpfMvvm.Converters.DictionaryConverterExtension.IsInit">
+            <summary>Объект находится в состояни инициализации.</summary>
+        </member>
+        <member name="P:WpfMvvm.Converters.DictionaryConverterExtension.Binding">
+            <summary>Привязка для словаря.</summary>
+        </member>
+        <member name="P:WpfMvvm.Converters.DictionaryConverterExtension.Dictionary">
+            <summary>Словарь для заполнения в XAML.</summary>
+        </member>
+        <member name="P:WpfMvvm.Converters.DictionaryConverterExtension.KeyType">
+            <summary>Тип ключа словаря.<br/>
+            Если <see langword="null"/> - используется значение по умолчанию.<br/>
+            По умолчанию - <see cref="T:System.Object"/>.</summary>
+        </member>
+        <member name="P:WpfMvvm.Converters.DictionaryConverterExtension.ValueType">
+            <summary>Тип значения словаря.<br/>
+            Если <see langword="null"/> - используется значение по умолчанию.<br/>
+            По умолчанию - <see cref="T:System.Object"/>.</summary>
+        </member>
+        <member name="P:WpfMvvm.Converters.DictionaryConverterExtension.UseBasicTypes">
+            <summary>Определяет какой конвертер бyдет возвращён.</summary>
+            <value><see langword="null"/> - <see cref="T:WpfMvvm.Converters.DictionaryConverter"/>,<br/>
+            <see langword="true"/> - <see cref="T:WpfMvvm.Converters.DictionaryTypeConverter"/> с <see cref="P:WpfMvvm.Converters.DictionaryTypeConverter.UseBasicTypes"/>=<see langword="true"/>,<br/>
+            <see langword="false"/> - <see cref="T:WpfMvvm.Converters.DictionaryTypeConverter"/> с <see cref="P:WpfMvvm.Converters.DictionaryTypeConverter.UseBasicTypes"/>=<see langword="false"/>.</value>
+        </member>
+        <member name="M:WpfMvvm.Converters.DictionaryConverterExtension.ChangeTypeDictionary">
+            <summary>Изменение типа словаря <see cref="P:WpfMvvm.Converters.DictionaryConverterExtension.Dictionary"/>.</summary>
+        </member>
+        <member name="T:WpfMvvm.Converters.EnumValuesConverter">
+            <summary>Возвращает массив значений полученного <see cref="T:System.Enum"/>.</summary>
+            <returns> <see cref="T:System.Array"/> со значениями полученного типа перечисления.
+            Если value не тип перечисления и не значение перечисления, тогда проверяется parameter.
+            </returns>
+        </member>
+        <member name="P:WpfMvvm.Converters.EnumValuesConverter.Instance">
+            <summary>Экземпляр конвертера.</summary>
+        </member>
+        <member name="T:WpfMvvm.Converters.EnumValuesConverterExtension">
+            <summary>Возвращает <see cref="P:WpfMvvm.Converters.EnumValuesConverter.Instance"/>.</summary>
+        </member>
+        <member name="T:WpfMvvm.Converters.EqualsConverter">
+            <summary>Конвертер возвращает результат сравнения value и parameter.</summary>
+            <remarks>Обратное преобразование не реализовано.</remarks>
+        </member>
+        <member name="M:WpfMvvm.Converters.EqualsConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>Не реализован.</summary>
+            <exception cref="T:System.NotImplementedException">Всегда.</exception>
+        </member>
+        <member name="P:WpfMvvm.Converters.EqualsConverter.Instance">
+            <summary>Экземпляр конвертера.</summary>
+        </member>
+        <member name="P:WpfMvvm.Converters.EqualsConverter.NotInstance">
+            <summary>Инверсный экземпляр конвертера.</summary>
+        </member>
+        <member name="T:WpfMvvm.Converters.EqualsTrueConverter">
+            <summary>Конвертер сравнивает значение и параметр. Если они не равны, то возвращается <see cref="F:System.Windows.Data.Binding.DoNothing"/>.</summary>
+            <remarks>Можно использовать для привязки RadioButton одной группы.</remarks>
+        </member>
+        <member name="P:WpfMvvm.Converters.EqualsTrueConverter.Instance">
+            <summary>Экземпляр конвертера.</summary>
+        </member>
+        <member name="P:WpfMvvm.Converters.EqualsTrueConverter.NotInstance">
+            <summary>Инверсный экземпляр конвертера.</summary>
+        </member>
+        <member name="T:WpfMvvm.Converters.EqualsTrueConverterExtension">
+            <summary>Возвращает экземпляр конвертера из свойства <see cref="P:WpfMvvm.Converters.EqualsTrueConverter.Instance"/> или <see cref="P:WpfMvvm.Converters.EqualsTrueConverter.NotInstance"/>.</summary>
+        </member>
+        <member name="P:WpfMvvm.Converters.EqualsTrueConverterExtension.IsTrue">
+            <summary>Задаёт какой конвертер возвращать.</summary>
+        </member>
+        <member name="T:WpfMvvm.Converters.GetTypeConverter">
+            <summary>Возвращает тип значения.</summary>
+            <returns><c>value?.GetType()</c></returns>
+            <remarks>Обратное преобразование не реализовано.</remarks>
+        </member>
+        <member name="M:WpfMvvm.Converters.GetTypeConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <summary>Не реализован.</summary>
+            <exception cref="T:System.NotImplementedException">Всегда.</exception>
+        </member>
+        <member name="P:WpfMvvm.Converters.GetTypeConverter.Instance">
+            <summary>Экземпляр конвертера.</summary>
+        </member>
+        <member name="T:WpfMvvm.Converters.GetTypeConverterExtension">
+            <summary>Возвращает <see cref="P:WpfMvvm.Converters.GetTypeConverter.Instance"/>.</summary>
+        </member>
+        <member name="T:WpfMvvm.Converters.StaticMethodsOfConverters">
+            <summary>Статический класс с методами для различных конвертеров.</summary>
+        </member>
+        <member name="M:WpfMvvm.Converters.StaticMethodsOfConverters.GetDefaultValueConverter(System.Type,System.Type,System.Boolean)">
+            <summary>Получает экземпляр системного
+            internal <see href="https://referencesource.microsoft.com/PresentationFramework/R/a224c73beb6d4d79.html">DefaultValueConverter</see>,
+            используемого по умолчанию для преобразования значения между исходным и целевым типами.</summary>
+            <param name="sourceType">Тип свойства источника.</param>
+            <param name="targetType">Тип целевого свойства.</param>
+            <param name="targetToSource">Конвертер с реализованным методом <see cref="M:System.Windows.Data.IValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)"/>
+            для обратного преобразования.</param>
+            <returns>Экземпляр из приватного словаря <see cref="F:WpfMvvm.Converters.StaticMethodsOfConverters.DefaultValueConverters"/>.<br/>
+            Если там нет экземпляра для указанных параметров, то он создаётся методом <see cref="F:WpfMvvm.Converters.StaticMethodsOfConverters.CreateDefaultValueConverter"/> и добавляется в словарь.</returns>
+            <remarks>Метод не потокозащищённый. Подразумевается его использование из потока Диспетчера.<para/>
+            При использовании полученного конвертера учитывайте, что если значение нельзя преобразовать в требуемый тип,
+            то в <see href="https://referencesource.microsoft.com/PresentationFramework/R/a224c73beb6d4d79.html">DefaultValueConverter</see>
+            выбрасывается исключение.</remarks>
+        </member>
+        <member name="F:WpfMvvm.Converters.StaticMethodsOfConverters.DefaultValueConverters">
+            <summary>Словарь ранее созданных экземпляров конвертеров.</summary>
+        </member>
+        <member name="F:WpfMvvm.Converters.StaticMethodsOfConverters.DataBindEngine">
+            <summary>Экземпляр internal класса <see href="https://referencesource.microsoft.com/PresentationFramework/R/327d897d35cc90ed.html">DataBindEngine</see>
+            из свойства <see href="https://referencesource.microsoft.com/PresentationFramework/R/67d798762acb5730.html">DataBindEngine.CurrentDataBindEngine</see>.</summary>
+        </member>
+        <member name="F:WpfMvvm.Converters.StaticMethodsOfConverters.CreateDefaultValueConverter">
+            <summary>internal метод <see href="https://referencesource.microsoft.com/PresentationFramework/R/c72fce88c319145f.html">DefaultValueConverter.Create</see>.</summary>
+            <remarks>static constructor - returns a ValueConverter suitable for converting between
+            the source and target.  The flag indicates whether targetToSource
+            conversions are actually needed.
+            if no Converter is needed, return DefaultValueConverter.ValueConverterNotNeeded marker.
+            if unable to create a DefaultValueConverter, return null to indicate error.</remarks>
+        </member>
+        <member name="M:WpfMvvm.Converters.StaticMethodsOfConverters.#cctor">
+            <summary>Инициализирует статические свойства и поля.</summary>
+        </member>
+        <member name="M:WpfMvvm.Converters.StaticMethodsOfConverters.GetValueTypeConverter(System.Type,System.Type)">
+            <summary>Получает экземпляр <see cref="T:WpfMvvm.Converters.DefaultValueConverter"/>,
+            используемого для преобразования значения между исходным и целевым типами.</summary>
+            <param name="sourceType">Тип свойства источника.</param>
+            <param name="targetType">Тип целевого свойства.</param>
+            <returns>Экземпляр из приватного словаря <see cref="F:WpfMvvm.Converters.StaticMethodsOfConverters.ValueTypeConverters"/>.<br/>
+            Если там нет экземпляра для указанных параметров, то он создаётся и добавляется в словарь.</returns>
+            <remarks>Метод не потокозащищённый. Подразумевается его использование из потока Диспетчера.</remarks>
+        </member>
+        <member name="F:WpfMvvm.Converters.StaticMethodsOfConverters.ValueTypeConverters">
+            <summary>Словарь ранее созданных экземпляров конвертера <see cref="T:WpfMvvm.Converters.DefaultValueConverter"/>.</summary>
+        </member>
+        <member name="M:WpfMvvm.Converters.StaticMethodsOfConverters.ConvertToType(System.Boolean,System.Type,System.Globalization.CultureInfo)">
+            <summary>Конвертация <see cref="T:System.Boolean"/> в заданный тип.</summary>
+            <param name="value">Конвертируемое значение.</param>
+            <param name="targetType">Тип в который должно быть конвертировано значение.</param>
+            <returns><see cref="T:System.String"/> если целевой тип совместим с <see cref="T:System.String"/>,
+            <see cref="T:System.Boolean"/> для всех остальных типов.</returns>
+        </member>
+        <member name="M:WpfMvvm.Converters.StaticMethodsOfConverters.ConvertToType(System.Windows.Visibility,System.Type)">
+            <summary>Конвертация <see cref="T:System.Windows.Visibility"/> в заданный тип.</summary>
+            <param name="value">Конвертируемое значение.</param>
+            <param name="targetType">Тип в который должно быть конвертировано значение.</param>
+            <returns><see cref="T:System.String"/> если целевой тип совместим с <see cref="T:System.String"/>,
+            <see cref="T:System.Windows.Visibility"/> для всех остальных типов.</returns>
+        </member>
+        <member name="M:WpfMvvm.Converters.StaticMethodsOfConverters.TryParse(System.Object,System.Boolean@)">
+            <summary>Приводит <see cref="T:System.Object"/> к <see cref="T:System.Boolean"/>.</summary>
+            <param name="value"><see cref="T:System.Boolean"/> или <see cref="T:System.String"/>.</param>
+            <param name="result">Полученное значение после приведения или конвертации.</param>
+            <returns><see langword="true"/> для <see cref="T:System.Boolean"/> и <see cref="T:System.String"/>, конвертируемого в bool.</returns>
+        </member>
+        <member name="M:WpfMvvm.Converters.StaticMethodsOfConverters.TryParse(System.Object,System.Windows.Visibility@)">
+            <summary>Приводит <see cref="T:System.Object"/> к <see cref="T:System.Windows.Visibility"/>.</summary>
+            <param name="value"><see cref="T:System.Windows.Visibility"/> или <see cref="T:System.String"/>.</param>
+            <param name="result">Полученное значение после приведения или конвертации.</param>
+            <returns><see cref="T:System.Windows.Visibility"/>.</returns>
+        </member>
+        <member name="M:WpfMvvm.Converters.StaticMethodsOfConverters.ToString(System.Object,System.Globalization.CultureInfo)">
+            <summary>Преобразование в строку.</summary>
+            <param name="value">Преобразуемое значение.</param>
+            <param name="culture">Используемая культура.</param>
+            <returns>для <paramref name="value"/>=<see langword="null"/> - "null";<br/>
+            для <see cref="T:System.String"/> - значение в кавычках <c>$"\"{<paramref name="value"/>}\""</c>;<br/>
+            для остальных - <see cref="M:System.ComponentModel.TypeConverter.ConvertToString(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object)"/> с <see cref="T:System.ComponentModel.ITypeDescriptorContext"/>=<see langword="null"/>.</returns>
+        </member>
+        <member name="F:WpfMvvm.Converters.StaticMethodsOfConverters.converters">
+            <summary>Словарь используемых <see cref="T:System.ComponentModel.TypeConverter"/>.</summary>
+        </member>
+        <member name="M:WpfMvvm.Converters.StaticMethodsOfConverters.GetConverter(System.Type)">
+            <summary>Получение <see cref="T:System.ComponentModel.TypeConverter"/> типа.</summary>
+            <param name="type">Тип для которого нужен конвертер.</param>
+            <returns><see cref="T:System.ComponentModel.TypeConverter"/> для указанного типа.</returns>
+        </member>
+        <member name="T:WpfMvvm.Converters.DictionaryTypeConverter">
+            <summary>Конвертер получает тип value и по нему возвращает значение из словаря.<br/>
+             Свойство <see cref="P:WpfMvvm.Converters.DictionaryTypeConverter.UseBasicTypes"/> задаёт возможность использования базовых типов.</summary>
+            <remarks> В классе переопределён метод базового класса <see cref="M:WpfMvvm.Converters.DictionaryConverter.GetValue(System.Collections.IDictionary,System.Object)"/> на поиск по типу полученного ключа. <br/>
+            Удобно использовать как селектор шаблонов или стилей.</remarks>
+        </member>
+        <member name="P:WpfMvvm.Converters.DictionaryTypeConverter.UseBasicTypes">
+            <summary>Если <see langword="false"/>, то ищется только ключ полностью совпадающий с заданным типом.<br/>
+            Если <see langword="true"/>, то также используются базовые типы. 
+            Если их несколько, то выбирается ближайший предок.</summary>
+        </member>
+        <member name="F:WpfMvvm.Converters.DictionaryTypeConverter.UseBasicTypesProperty">
+            <summary>Using a DependencyProperty as the backing store for UseBasicTypes.  This enables animation, styling, binding, etc...</summary>
+        </member>
+        <member name="M:WpfMvvm.Converters.DictionaryTypeConverter.#ctor">
+            <summary>Инициализирует новый экземпляр конвертера <see cref="T:WpfMvvm.Converters.DictionaryTypeConverter"/>.<br/>
+            В <see cref="!:Dictionary"/> записывается новый экземпляр <c>new Dictionary&lt;Type, object&gt;()</c>.</summary>
+        </member>
+        <member name="M:WpfMvvm.Converters.DictionaryTypeConverter.#ctor(System.Collections.IDictionary)">
+            <summary>Инициализирует новый экземпляр конвертера <see cref="T:WpfMvvm.Converters.DictionaryTypeConverter"/> переданным словарём.</summary>
+            <param name="dictionary">Cловарь записываемый в <see cref="!:Dictionary"/>.</param>
+        </member>
+        <member name="P:WpfMvvm.Converters.DictionaryTypeConverter.InstanceUseBaseTypes">
+            <summary>Экземпляр конвертера с <see cref="P:WpfMvvm.Converters.DictionaryTypeConverter.UseBasicTypes"/>=<see langword="true"/>.<br/>
+            Экземпляр заморожен.<br/>
+            Свойствам заданы значения и они не изменяемы: <see cref="!:Dictionary"/>=<see langword="null"/>, <see cref="P:WpfMvvm.Converters.DictionaryTypeConverter.UseBasicTypes"/>=<see langword="true"/>.<br/>
+            Словарь должен передаваться через parameters метода <see cref="!:Convert(object, Type, object, CultureInfo)"/>.</summary>
+        </member>
+        <member name="P:WpfMvvm.Converters.DictionaryTypeConverter.InstanceNotUseBaseTypes">
+            <summary>Экземпляр конвертера с <see cref="P:WpfMvvm.Converters.DictionaryTypeConverter.UseBasicTypes"/>=<see langword="false"/>.<br/>
+            Экземпляр заморожен.<br/>
+            Свойствам заданы значения и они не изменяемы: <see cref="!:Dictionary"/>=<see langword="null"/>, <see cref="P:WpfMvvm.Converters.DictionaryTypeConverter.UseBasicTypes"/>=<see langword="false"/>.<br/>
+            Словарь должен передаваться через parameters метода <see cref="!:Convert(object, Type, object, CultureInfo)"/>.</summary>
+        </member>
+        <member name="M:WpfMvvm.Converters.DictionaryTypeConverter.#cctor">
+            <summary>Записывает в <see cref="P:WpfMvvm.Converters.DictionaryTypeConverter.InstanceUseBaseTypes"/> и <see cref="P:WpfMvvm.Converters.DictionaryTypeConverter.InstanceNotUseBaseTypes"/> статические замороженные экземпляры конвертеров.</summary>
+        </member>
+        <member name="T:WpfMvvm.Converters.DefaultValueConverter">
+            <summary>Конвертер-обёртка над internal <see href="https://referencesource.microsoft.com/PresentationFramework/R/a224c73beb6d4d79.html">DefaultValueConverter</see>.</summary>
+            <remarks>В конвертере можно явно задать типы целевого свойства и свойства источника: <see cref="P:WpfMvvm.Converters.DefaultValueConverter.TargetType"/> и <see cref="P:WpfMvvm.Converters.DefaultValueConverter.SourceType"/>.<br/>
+            Если какой-то из них не задан, то используется параметр target из методов <see cref="M:WpfMvvm.Converters.DefaultValueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)"/>
+            и <see cref="M:WpfMvvm.Converters.DefaultValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)"/>.<para/>
+            В конвертере добавлена обработка исключений возникающих в <see href="https://referencesource.microsoft.com/PresentationFramework/R/a224c73beb6d4d79.html">DefaultValueConverter</see>.<br/>
+            Если исключение возникло в методе <see cref="M:System.Windows.Data.IValueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)"/> - возвращается <see cref="F:System.Windows.DependencyProperty.UnsetValue"/>.<br/>
+            Если в <see cref="M:System.Windows.Data.IValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)"/> - возвращается <see cref="F:System.Windows.Data.Binding.DoNothing"/>.</remarks>
+        </member>
+        <member name="P:WpfMvvm.Converters.DefaultValueConverter.SourceType">
+            <summary>Тип свойства источника. Если не задан, то используется targetType из <see cref="M:WpfMvvm.Converters.DefaultValueConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)"/>.</summary>
+        </member>
+        <member name="P:WpfMvvm.Converters.DefaultValueConverter.TargetType">
+            <summary>Тип целевого свойства. Если не задан, то используется targetType из <see cref="M:WpfMvvm.Converters.DefaultValueConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)"/>.</summary>
+        </member>
+        <member name="M:WpfMvvm.Converters.DefaultValueConverter.#ctor(System.Type,System.Type)">
+            <summary>Создаёт экземпляр конвертера с заданными типами.</summary>
+            <param name="sourceType">Значение для <see cref="P:WpfMvvm.Converters.DefaultValueConverter.SourceType"/>.</param>
+            <param name="targetType">Значение для <see cref="P:WpfMvvm.Converters.DefaultValueConverter.TargetType"/>.</param>
+        </member>
+        <member name="P:WpfMvvm.Converters.DefaultValueConverter.Instance">
+            <summary>Возвращает internal <see href="https://referencesource.microsoft.com/PresentationFramework/R/a224c73beb6d4d79.html">DefaultValueConverter</see>
+            в оболочке с обработкой исключений.</summary>
+        </member>
+        <member name="T:WpfMvvm.Converters.DefaultValueConverterExtension">
+            <summary>Возвращает экземпляр <see cref="T:WpfMvvm.Converters.DefaultValueConverter"/> с заданными типами.<br/>
+            Для получения экземпляра используется метод <see cref="M:WpfMvvm.Converters.StaticMethodsOfConverters.GetValueTypeConverter(System.Type,System.Type)"/>.</summary>
+        </member>
+        <member name="P:WpfMvvm.Converters.DefaultValueConverterExtension.SourceType">
+            <inheritdoc cref="P:WpfMvvm.Converters.DefaultValueConverter.SourceType"/>
+        </member>
+        <member name="P:WpfMvvm.Converters.DefaultValueConverterExtension.TargetType">
+            <inheritdoc cref="P:WpfMvvm.Converters.DefaultValueConverter.TargetType"/>
+        </member>
+        <member name="P:WpfMvvm.Converters.DefaultValueConverterExtension.IsWithNoExceptions">
+            <summary>Задаёт будут ли исключения при невозможности преобразования значения к указанному типу.</summary>
+            <remarks><see langword="true"/> - создаётся и возвращается экземпляр <see cref="T:WpfMvvm.Converters.DefaultValueConverter"/>,<br/>
+            <see langword="false"/> - </remarks>
+        </member>
+        <member name="M:WpfMvvm.Converters.DefaultValueConverterExtension.#ctor">
+            <summary>Конструктор по умолчанию.</summary>
+        </member>
+        <member name="M:WpfMvvm.Converters.DefaultValueConverterExtension.#ctor(System.Type,System.Type)">
+            <summary>Конструктор с заданием значений свойствам.</summary>
+            <param name="targetType">Значение для свойства <see cref="P:WpfMvvm.Converters.DefaultValueConverterExtension.TargetType"/>.</param>
+            <param name="sourceType">Значение для свойства <see cref="P:WpfMvvm.Converters.DefaultValueConverterExtension.SourceType"/>.</param>
+        </member>
+        <member name="M:WpfMvvm.Converters.DefaultValueConverterExtension.#ctor(System.Type)">
+            <summary>Конструктор с заданием типа целевого свойства.</summary>
+            <param name="targetType">Значение для свойства <see cref="P:WpfMvvm.Converters.DefaultValueConverterExtension.TargetType"/>.</param>
+        </member>
+    </members>
+</doc>

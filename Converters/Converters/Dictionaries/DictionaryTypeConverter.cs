@@ -10,14 +10,14 @@ namespace WpfMvvm.Converters
 {
     /// <summary>Конвертер получает тип value и по нему возвращает значение из словаря.<br/>
     ///  Свойство <see cref="UseBasicTypes"/> задаёт возможность использования базовых типов.</summary>
-    /// <remarks> В классе переопределён метод базового класса <see cref="DictionaryConverter.GetValue(IDictionary, object)"/> на поиск по типу полученого ключа. <br/>
+    /// <remarks> В классе переопределён метод базового класса <see cref="DictionaryConverter.GetValue(IDictionary, object)"/> на поиск по типу полученного ключа. <br/>
     /// Удобно использовать как селектор шаблонов или стилей.</remarks>
     [ValueConversion(typeof(Type), typeof(object))]
     public class DictionaryTypeConverter : DictionaryConverter
     {
         /// <summary>Если <see langword="false"/>, то ищется только ключ полностью совпадающий с заданным типом.<br/>
-        /// Если <see langword="true"/>. то также используются базовые типы. 
-        /// Если их несклько, то выбирается ближайший.</summary>
+        /// Если <see langword="true"/>, то также используются базовые типы. 
+        /// Если их несколько, то выбирается ближайший предок.</summary>
         public bool UseBasicTypes
         {
             get { return (bool)GetValue(UseBasicTypesProperty); }

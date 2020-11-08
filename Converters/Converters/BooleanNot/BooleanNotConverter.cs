@@ -5,7 +5,7 @@ using System.Windows.Data;
 
 namespace WpfMvvm.Converters
 {
-    /// <summary>Инвентирует полученное логическое значение.</summary>
+    /// <summary>Инвертирует полученное логическое значение.</summary>
     /// <remarks>Если приходит <see cref="string"/>, то значение конвертируется 
     /// в <see cref="bool"/> методом <see cref="bool.TryParse(string, out bool)"/>.</remarks>
     /// <returns>Если значение не <see cref="bool"/> или <see cref="string"/>, конвертируемое в <see cref="bool"/> - возвращается <see cref="DependencyProperty.UnsetValue"/>.</returns>

@@ -7,11 +7,11 @@ namespace WpfMvvm.Converters
     [Flags]
     public enum BooleanToVisibilityModeEnum
     {
-        /// <summary>С <see cref="Visibility.Collapsed"/> и без инверсии.</summary>
+        /// <summary>С <see cref="Visibility.Collapsed"/> без инверсии.</summary>
         Normal = 0,
-        /// <summary>С инверсией.</summary>
+        /// <summary>С <see cref="Visibility.Collapsed"/> и инверсией.</summary>
         Not = 1,
-        /// <summary>С <see cref="Visibility.Hidden"/>.</summary>
+        /// <summary>С <see cref="Visibility.Hidden"/> без инверсии.</summary>
         Hidden = 2,
         /// <summary>С <see cref="Visibility.Hidden"/> и инверсией.</summary>
         NotHiden = 3

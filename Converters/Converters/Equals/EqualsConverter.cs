@@ -4,8 +4,8 @@ using System.Windows.Data;
 
 namespace WpfMvvm.Converters
 {
-    /// <summary>Конвертер возвращает результат сравнения vaue и parameter.</summary>
-    /// <remarks>Обратное преобразование не реализованно.</remarks>
+    /// <summary>Конвертер возвращает результат сравнения value и parameter.</summary>
+    /// <remarks>Обратное преобразование не реализовано.</remarks>
     [ValueConversion(typeof(object), typeof(bool))]
     public class EqualsConverter : IValueConverter
     {

@@ -47,7 +47,7 @@ namespace WpfMvvm.Converters
                 return DependencyProperty.UnsetValue;
         }
 
-        /// <summary>Экземпляр конверера.</summary>
+        /// <summary>Экземпляр конвертера.</summary>
         public static BooleanToVisibilityConverter Instance { get; } = new BooleanToVisibilityConverter();
         /// <summary>Экземпляр конвертера инверсный к <see cref="Instance"/>.</summary>
         public static ReadOnlyChainOfConverters NotInstance { get; } = new ReadOnlyChainOfConverters(BooleanNotConverter.Instance, Instance);

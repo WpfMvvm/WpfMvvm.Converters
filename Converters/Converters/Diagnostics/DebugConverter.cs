@@ -6,6 +6,7 @@ using System.Windows.Data;
 namespace WpfMvvm.Converters
 {
     /// <summary>Конвертер для трассировки привязок.</summary>
+    /// <remarks>Отправляет в Окно Вывода сообщения при вызове методов <see cref="Convert"/> и <see cref="ConvertBack"/>.</remarks>
     [ValueConversion(typeof(object), typeof(object))]
 
     public class DebugConverter : IValueConverter

@@ -25,7 +25,7 @@ namespace WpfMvvm.Converters
             return result;
         }
 
-        /// <summary>Экземпляр конверера.</summary>
+        /// <summary>Экземпляр конвертера.</summary>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return BooleanToVisibilityConverter.Instance.ConvertBack(value, targetType, parameter, culture);

@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WpfMvvm.Converters</RootNamespace>
-    <AssemblyName>WpfMvvm.Converters</AssemblyName>
+    <AssemblyName>Converters</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -39,7 +39,7 @@
     <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <DocumentationFile>bin\NuGet\WpfMvvm.Converters.xml</DocumentationFile>
+    <DocumentationFile>bin\NuGet\Converters.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>WpfMvvm.Converters.ico</ApplicationIcon>
@@ -65,14 +65,7 @@
     <Compile Include="BooleanToVisibility\BooleanToVisibilityExtension.cs" />
     <Compile Include="BooleanToVisibility\BooleanToVisibilityHiddenConverter.cs" />
     <Compile Include="BooleanToVisibility\BooleanToVisibilityModeEnum.cs" />
-    <Compile Include="Chains\ChainOfConverters - IList.cs">
-      <DependentUpon>ChainOfConverters.cs</DependentUpon>
-    </Compile>
     <Compile Include="Chains\ChainOfConverters.cs" />
-    <Compile Include="Chains\ReadOnlyChainOfConverters - IReadOnlyList.cs">
-      <DependentUpon>ReadOnlyChainOfConverters.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Diagnostics\AfterBeforeEnum.cs" />
     <Compile Include="Diagnostics\DebugConverter.cs" />
     <Compile Include="Diagnostics\DebugConverterExtension.cs" />
     <Compile Include="Dictionaries\DictionaryConverter - Constructors.cs">
@@ -115,17 +108,14 @@
     </Compile>
     <Compile Include="StaticMethodsOfConverters.cs" />
     <Compile Include="Dictionaries\DictionaryTypeConverter.cs" />
-    <Compile Include="DefaultValue\DefaultValueConverter.cs" />
-    <Compile Include="DefaultValue\DefaultValueConverterExtension.cs" />
+    <Compile Include="ValueType\ValueTypeConverter.cs" />
+    <Compile Include="ValueType\ValueTypeConverterExtension.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="package-.nuspec" />
     <None Include="package.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="WpfMvvm.Converters.ico" />
-    <Content Include="WpfMvvm.Converters.xml" />
-    <Resource Include="WpfMvvm.Converters.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

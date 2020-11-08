@@ -11,13 +11,13 @@ namespace WpfMvvm.Converters
     /// <summary>Неизменяемая цепочка конвертеров применяемая к входному значению.</summary>
     [ValueConversion(typeof(object), typeof(object))]
     [ContentProperty(nameof(Converters))]
-    public class ReadOnlyChainOfConverters : IValueConverter
+    public partial class ReadOnlyChainOfConverters : IValueConverter
     {
         /// <summary>Неизменяемая цепочка конвертеров.</summary>
         public IReadOnlyList<IValueConverter> Converters { get; }
 
-        /// <summary>Создаёт конвертер из заданной неизменяемой цепочки конвертеров.</summary>
-        /// <param name="converters">Цепочка конвертеров.</param>
+        /// <summary>Создаёт конвертер из последовательности конвертеров.</summary>
+        /// <param name="converters">Последовательность конвертеров.</param>
         public ReadOnlyChainOfConverters(IEnumerable<IValueConverter> converters)
         {
             if (converters == null || !converters.Any(cnv => cnv != null))
@@ -26,8 +26,8 @@ namespace WpfMvvm.Converters
             Converters = converters.Where(cnv => cnv != null).ToList().AsReadOnly();
         }
 
-        /// <summary>Создаёт конвертер из заданной неизменяемой цепочки конвертеров.</summary>
-        /// <param name="converters">Цепочка конвертеров.</param>
+        /// <summary>Создаёт конвертер из массива конвертеров.</summary>
+        /// <param name="converters">Массив конвертеров или их список в параметрах.</param>
         public ReadOnlyChainOfConverters(params IValueConverter[] converters)
             : this((IEnumerable<IValueConverter>)converters)
         { }
