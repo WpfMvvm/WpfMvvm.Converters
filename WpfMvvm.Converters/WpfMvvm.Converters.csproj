@@ -30,6 +30,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>NU5128</NoWarn>
+    <DocumentationFile>bin\Release\WpfMvvm.Converters.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'NuGet|AnyCPU'">
     <OutputPath>bin\NuGet\</OutputPath>
