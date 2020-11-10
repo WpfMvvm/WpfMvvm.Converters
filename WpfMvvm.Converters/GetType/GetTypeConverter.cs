@@ -10,6 +10,7 @@ namespace WpfMvvm.Converters
     [ValueConversion(typeof(object), typeof(Type))]
     public class GetTypeConverter : IValueConverter
     {
+        /// <inheritdoc cref="IValueConverter.Convert(object, Type, object, CultureInfo)"/>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
             => value?.GetType();
 

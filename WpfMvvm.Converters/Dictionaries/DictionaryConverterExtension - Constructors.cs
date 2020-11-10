@@ -15,14 +15,14 @@ namespace WpfMvvm.Converters
         /// <summary>Задаёт свойство <see cref="UseBasicTypes"/>.</summary>
         /// <param name="useBaseTypes">Значение для свойства <see cref="DictionaryTypeConverter.UseBasicTypes"/>.</param>
         public DictionaryConverterExtension(bool useBaseTypes)
-        {
-            UseBasicTypes = useBaseTypes;
-        }
+            : this()
+            => UseBasicTypes = useBaseTypes;
 
         /// <summary>Задаёт тип ключа и тип значения.</summary>
         /// <param name="keyType">Тип ключа.</param>
         /// <param name="valueType">Тип значения.</param>
         public DictionaryConverterExtension(Type keyType, Type valueType)
+            : this()
         {
             KeyType = keyType ?? throw new ArgumentNullException(nameof(keyType));
             ValueType = valueType ?? throw new ArgumentNullException(nameof(valueType));
@@ -46,9 +46,8 @@ namespace WpfMvvm.Converters
             : this(useBaseTypes, keyType, valueType)
         { }
 
-        /// <summary>Создаёт экземпляр со свойствами по умолчанию.</summary>
-        public DictionaryConverterExtension()
-        {
-        }
+        /// <summary>Создаёт экземпляр со свойствами по умолчанию.
+        /// Автоматически начинается инициализация объекта.</summary>
+        public DictionaryConverterExtension() => BeginInit();
     }
 }

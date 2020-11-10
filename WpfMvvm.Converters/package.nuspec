@@ -1,40 +1,40 @@
 <?xml version="1.0"?>
 <package>
-	<metadata>
-		<!--*-->
-		<id>WpfMvvm.Converters</id>
-		<!--*-->
-		<version>0.0.0.5</version>
-		<title>WpfMvvm.Converters</title>
-		<!--*-->
-		<authors>EldHasp</authors>
-		<owners>EldHasp</owners>
-		<!--
+  <metadata>
+    <!--*-->
+    <id>WpfMvvm.Converters</id>
+    <!--*-->
+    <version>0.0.0.5</version>
+    <title>WpfMvvm.Converters</title>
+    <!--*-->
+    <authors>EldHasp</authors>
+    <owners>EldHasp</owners>
+    <!--
     <licenseUrl></licenseUrl>
     <projectUrl></projectUrl>
     <iconUrl></iconUrl>
 -->
-		<iconUrl>https://github.com/WpfMvvm/WpfMvvm.Ico/blob/main/Png/WpfMvvm.Converters.png</iconUrl>
-		<!--<licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>-->
-		<license type="expression">MIT</license>
-		<RepositoryType>git</RepositoryType>
-		<RepositoryUrl>https://github.com/WpfMvvm/WpfMvvm.Converters</RepositoryUrl>
-		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<!--*-->
-		<description>WPF Конвертеры</description>
-		<!--*-->
-		<releaseNotes>Добавлен файд XML документации</releaseNotes>
-		<copyright>Copyright ©  2020</copyright>
-		<tags>WPF MVVM IValueConverter Conveter</tags>
-		<dependencies>
-			<!--
+    <iconUrl>https://github.com/WpfMvvm/WpfMvvm.Ico/blob/main/Png/WpfMvvm.Converters.png</iconUrl>
+    <!--<licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>-->
+    <license type="expression">MIT</license>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/WpfMvvm/WpfMvvm.Converters</RepositoryUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!--*-->
+    <description>WPF Конвертеры</description>
+    <!--*-->
+    <releaseNotes>Добавлен файл XML документации</releaseNotes>
+    <copyright>Copyright ©  2020</copyright>
+    <tags>WPF MVVM IValueConverter Conveter</tags>
+    <dependencies>
+      <!--
       <dependency id="SampleDependency" version="1.0" />
 -->
-			<group targetFramework=".NETFramework4.8" />
-		</dependencies>
-		<icon>WpfMvvm.Converters.png</icon>
-	</metadata>
-	<files>
-		<file src="WpfMvvm.Converters.png" />
-	</files>
+      <group targetFramework=".NETFramework4.8" />
+    </dependencies>
+    <icon>WpfMvvm.Converters.png</icon>
+  </metadata>
+  <files>
+    <file src="WpfMvvm.Converters.png" />
+  </files>
 </package>

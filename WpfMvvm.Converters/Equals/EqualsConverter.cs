@@ -9,6 +9,7 @@ namespace WpfMvvm.Converters
     [ValueConversion(typeof(object), typeof(bool))]
     public class EqualsConverter : IValueConverter
     {
+        /// <inheritdoc cref="IValueConverter.Convert(object, Type, object, CultureInfo)"/>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return object.Equals(value, parameter);

@@ -10,6 +10,7 @@ namespace WpfMvvm.Converters
     [ValueConversion(typeof(object), typeof(bool))]
     public class EqualsTrueConverter : IValueConverter
     {
+        /// <inheritdoc cref="IValueConverter.Convert(object, Type, object, CultureInfo)"/>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (object.Equals(value, parameter))
@@ -17,6 +18,7 @@ namespace WpfMvvm.Converters
             return Binding.DoNothing;
         }
 
+        /// <inheritdoc cref="IValueConverter.ConvertBack(object, Type, object, CultureInfo)"/>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (object.Equals(value, true))

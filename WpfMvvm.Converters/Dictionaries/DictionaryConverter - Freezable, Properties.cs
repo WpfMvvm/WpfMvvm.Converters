@@ -24,6 +24,8 @@ namespace WpfMvvm.Converters
         public static readonly DependencyProperty DictionaryProperty =
             DependencyProperty.Register(nameof(Dictionary), typeof(IDictionary), typeof(DictionaryConverter), new PropertyMetadata(null));
 
+        /// <summary>Создаёт новый экземпляр <see cref="DictionaryConverter"/>.</summary>
+        /// <returns>Новый экземпляр <see cref="DictionaryConverter"/>.</returns>
         protected override Freezable CreateInstanceCore()
             => new DictionaryConverter();
 

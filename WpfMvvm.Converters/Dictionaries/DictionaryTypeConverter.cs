@@ -29,16 +29,22 @@ namespace WpfMvvm.Converters
             DependencyProperty.Register(nameof(UseBasicTypes), typeof(bool), typeof(DictionaryTypeConverter), new PropertyMetadata(true));
 
         /// <summary>Инициализирует новый экземпляр конвертера <see cref="DictionaryTypeConverter"/>.<br/>
-        /// В <see cref="Dictionary"/> записывается новый экземпляр <c>new Dictionary&lt;Type, object&gt;()</c>.</summary>
+        /// В <see cref="DictionaryConverter.Dictionary"/> записывается новый экземпляр <c>new Dictionary&lt;Type, object&gt;()</c>.</summary>
         public DictionaryTypeConverter()
             : this(new Dictionary<Type, object>())
         { }
 
         /// <summary>Инициализирует новый экземпляр конвертера <see cref="DictionaryTypeConverter"/> переданным словарём.</summary>
-        /// <param name="dictionary">Cловарь записываемый в <see cref="Dictionary"/>.</param>
+        /// <param name="dictionary">Cловарь записываемый в <see cref="DictionaryConverter.Dictionary"/>.</param>
         public DictionaryTypeConverter(IDictionary dictionary)
             => Dictionary = dictionary;
 
+        /// <summary>Возвращает значение из словаря по полученному типу значения ключа.<br/>
+        /// Может быть переопределён в производных классах.</summary>
+        /// <param name="dictionary">Словарь для поиска. Не может быть <see langword="null"/>.</param>
+        /// <param name="key">Значение. Не может быть <see langword="null"/>.<br/>
+        /// Если передан не тип <see cref="Type"/>, то для поиска по словарю используется <see cref="object.GetType()"/> от <paramref name="key"/>.</param>
+        /// <returns><see cref="object"/> со значением.</returns>
         protected override object GetValue(IDictionary dictionary, object key)
         {
             Type keyType;
@@ -65,22 +71,32 @@ namespace WpfMvvm.Converters
 
             return base.GetValue(dictionary, keyType);
         }
+
+        /// <summary>Создаёт новый экземпляр <see cref="DictionaryTypeConverter"/>.</summary>
+        /// <returns>Новый экземпляр <see cref="DictionaryTypeConverter"/>.</returns>
         protected override Freezable CreateInstanceCore()
             => new DictionaryTypeConverter();
 
         /// <summary>Экземпляр конвертера с <see cref="UseBasicTypes"/>=<see langword="true"/>.<br/>
         /// Экземпляр заморожен.<br/>
-        /// Свойствам заданы значения и они не изменяемы: <see cref="Dictionary"/>=<see langword="null"/>, <see cref="UseBasicTypes"/>=<see langword="true"/>.<br/>
-        /// Словарь должен передаваться через parameters метода <see cref="Convert(object, Type, object, CultureInfo)"/>.</summary>
+        /// Свойствам заданы значения и они не изменяемы: 
+        /// <see cref="DictionaryConverter.Dictionary"/>=<see langword="null"/>, 
+        /// <see cref="UseBasicTypes"/>=<see langword="true"/>.<br/>
+        /// Словарь должен передаваться через parameters метода 
+        /// <see cref="DictionaryConverter.Convert(object, Type, object, CultureInfo)"/>.</summary>
         public static DictionaryTypeConverter InstanceUseBaseTypes { get; }
 
         /// <summary>Экземпляр конвертера с <see cref="UseBasicTypes"/>=<see langword="false"/>.<br/>
         /// Экземпляр заморожен.<br/>
-        /// Свойствам заданы значения и они не изменяемы: <see cref="Dictionary"/>=<see langword="null"/>, <see cref="UseBasicTypes"/>=<see langword="false"/>.<br/>
-        /// Словарь должен передаваться через parameters метода <see cref="Convert(object, Type, object, CultureInfo)"/>.</summary>
+        /// Свойствам заданы значения и они не изменяемы: 
+        /// <see cref="DictionaryConverter.Dictionary"/>=<see langword="null"/>, 
+        /// <see cref="UseBasicTypes"/>=<see langword="false"/>.<br/>
+        /// Словарь должен передаваться через parameters метода
+        /// <see cref="DictionaryConverter.Convert(object, Type, object, CultureInfo)"/>.</summary>
         public static DictionaryTypeConverter InstanceNotUseBaseTypes { get; }
 
-        /// <summary>Записывает в <see cref="InstanceUseBaseTypes"/> и <see cref="InstanceNotUseBaseTypes"/> статические замороженные экземпляры конвертеров.</summary>
+        /// <summary>Записывает в <see cref="InstanceUseBaseTypes"/> и <see cref="InstanceNotUseBaseTypes"/>
+        /// статические замороженные экземпляры конвертеров.</summary>
         static DictionaryTypeConverter()
         {
             InstanceUseBaseTypes = new DictionaryTypeConverter(null) { UseBasicTypes = true };

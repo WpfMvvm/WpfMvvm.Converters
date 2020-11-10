@@ -37,6 +37,12 @@ namespace WpfMvvm.Converters
             TargetType = targetType;
         }
 
+        /// <summary>Возвращает экземпляр конвертера для типов <see cref="SourceType"/> и <see cref="TargetType"/>
+        /// из метода <see cref="StaticMethodsOfConverters.GetValueTypeConverter(Type, Type)"/>.</summary>
+        /// <param name="serviceProvider">Вспомогательный объект поставщика служб,
+        /// способный предоставлять службы для расширения разметки.<para/>
+        /// Не используется.</param>
+        /// <returns>Экземпляр из метода <see cref="StaticMethodsOfConverters.GetValueTypeConverter(Type, Type)"/>.</returns>
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
             return StaticMethodsOfConverters.GetValueTypeConverter(SourceType, TargetType);

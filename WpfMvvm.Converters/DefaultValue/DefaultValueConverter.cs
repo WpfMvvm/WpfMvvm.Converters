@@ -29,6 +29,7 @@ namespace WpfMvvm.Converters
             TargetType = targetType;
         }
 
+        /// <inheritdoc cref="IValueConverter.Convert(object, Type, object, CultureInfo)"/>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value == null)
@@ -50,6 +51,7 @@ namespace WpfMvvm.Converters
             }
         }
 
+        /// <inheritdoc cref="IValueConverter.ConvertBack(object, Type, object, CultureInfo)"/>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value == null)

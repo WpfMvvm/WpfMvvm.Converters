@@ -32,6 +32,16 @@ namespace WpfMvvm.Converters
             : this((IEnumerable<IValueConverter>)converters)
         { }
 
+        /// <summary>К входному значению применяется последовательно преобразование 
+        /// методов <see cref="IValueConverter.Convert(object, Type, object, CultureInfo)"/>
+        /// всех конвертеров из списка <see cref="Converters"/>.</summary>
+        /// <param name="value">Входное значение.</param>
+        /// <param name="targetType">Тип целевого свойства.</param>
+        /// <param name="parameter">Параметр конвертера.</param>
+        /// <param name="culture">Культура конвертера.</param>
+        /// <returns>Значение подвергнутое нескольким последовательным преобразованиям.<br/>
+        /// Если один из конвертеров вернул значение <see cref="DependencyProperty.AddOwner(Type)"/>
+        /// или <see cref="Binding.DoNothing"/>, то дальнейшие преобразования не применяются.</returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             for (int i = 0; i < Converters.Count; i++)
@@ -45,6 +55,16 @@ namespace WpfMvvm.Converters
             return value;
         }
 
+        /// <summary>К входному значению применяется последовательно преобразование в обратном порядке
+        /// методов <see cref="IValueConverter.ConvertBack(object, Type, object, CultureInfo)"/>
+        /// всех конвертеров из списка <see cref="Converters"/>.</summary>
+        /// <param name="value">Входное значение для обратного преобразования.</param>
+        /// <param name="targetType">Тип свойства источника.</param>
+        /// <param name="parameter">Параметр конвертера.</param>
+        /// <param name="culture">Культура конвертера.</param>
+        /// <returns>Значение подвергнутое нескольким последовательным преобразованиям.<br/>
+        /// Если один из конвертеров вернул значение <see cref="DependencyProperty.AddOwner(Type)"/>
+        /// или <see cref="Binding.DoNothing"/>, то дальнейшие преобразования не применяются.</returns>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             for (int i = Converters.Count - 1; i >= 0; i--)

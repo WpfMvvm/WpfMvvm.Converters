@@ -13,6 +13,7 @@ namespace WpfMvvm.Converters
 
     public class EnumValuesConverter : IValueConverter
     {
+        /// <inheritdoc cref="IValueConverter.Convert(object, Type, object, CultureInfo)"/>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             Type typeEnum = null;
@@ -44,6 +45,8 @@ namespace WpfMvvm.Converters
 
         }
 
+        /// <summary>Не реализован.</summary>
+        /// <exception cref="NotImplementedException">Всегда.</exception>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();

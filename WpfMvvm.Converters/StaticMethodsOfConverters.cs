@@ -12,6 +12,7 @@ namespace WpfMvvm.Converters
         /// <summary>Конвертация <see cref="bool"/> в заданный тип.</summary>
         /// <param name="value">Конвертируемое значение.</param>
         /// <param name="targetType">Тип в который должно быть конвертировано значение.</param>
+        /// <param name="culture">Культура используемая при преобразовании в строку.</param>
         /// <returns><see cref="string"/> если целевой тип совместим с <see cref="string"/>,
         /// <see cref="bool"/> для всех остальных типов.</returns>
         public static object ConvertToType(this bool value, Type targetType, CultureInfo culture)

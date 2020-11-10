@@ -15,6 +15,15 @@ namespace WpfMvvm.Converters
     [ValueConversion(typeof(string), typeof(string))]
     public class BooleanNotConverter : IValueConverter
     {
+        /// <summary>Инвертирует полученное логическое значение.</summary>
+        /// <param name="value">Значение в типе <see cref="bool"/> или <see cref="string"/>.</param>
+        /// <param name="targetType">Тип целевого свойства.</param>
+        /// <param name="parameter">Параметр конвертера. Не используется.</param>
+        /// <param name="culture">Культура конвертера. Используется при парсинге <see cref="string"/> в <see cref="bool"/>.</param>
+        /// <returns>Возвращает инверсию входного значения.<br/>
+        /// Если значение не <see cref="bool"/> или <see cref="string"/>, конвертируемое в <see cref="bool"/>
+        /// - возвращается <see cref="DependencyProperty.UnsetValue"/>.<para/>
+        /// Если <paramref name="targetType"/>=<see cref="string"/>, то выходное значение конвертируется в строку.</returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
 
@@ -25,6 +34,15 @@ namespace WpfMvvm.Converters
 
         }
 
+        /// <summary>Инвертирует полученное логическое значение.</summary>
+        /// <param name="value">Значение в типе <see cref="bool"/> или <see cref="string"/>.</param>
+        /// <param name="targetType">Тип свойства источника.</param>
+        /// <param name="parameter">Параметр конвертера. Не используется.</param>
+        /// <param name="culture">Культура конвертера. Используется при парсинге <see cref="string"/> в <see cref="bool"/>.</param>
+        /// <returns>Возвращает инверсию входного значения.<br/>
+        /// Если значение не <see cref="bool"/> или <see cref="string"/>, конвертируемое в <see cref="bool"/>
+        /// - возвращается <see cref="DependencyProperty.UnsetValue"/>.<para/>
+        /// Если <paramref name="targetType"/>=<see cref="string"/>, то выходное значение конвертируется в строку.</returns>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value.TryParse(out bool valBool))
