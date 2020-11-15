@@ -37,7 +37,8 @@ namespace WpfMvvm.Converters
         /// <summary>Инициализирует новый экземпляр конвертера <see cref="DictionaryTypeConverter"/> переданным словарём.</summary>
         /// <param name="dictionary">Cловарь записываемый в <see cref="DictionaryConverter.Dictionary"/>.</param>
         public DictionaryTypeConverter(IDictionary dictionary)
-            => Dictionary = dictionary;
+            : base(dictionary)
+        { }
 
         /// <summary>Возвращает значение из словаря по полученному типу значения ключа.<br/>
         /// Может быть переопределён в производных классах.</summary>

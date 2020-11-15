@@ -31,7 +31,7 @@ namespace WpfMvvm.Converters
         /// В экземплярах конвертеров в свойство <see cref="DictionaryConverter.Dictionary"/> либо устанавливается словарь из <see cref="Dictionary"/>, 
         /// либо это свойство привязывается по привязке <see cref="Binding"/>.</returns>
         /// <exception cref="Exception">Если не закончена инициализация объекта. С сообщением "Инициализация объекта не завершена."<br/>
-        /// Если в <see cref="UseBasicTypes"/> неожидаемое значение. с сообщением $"Неожидаемое значение {nameof(UseBasicTypes)}={UseBasicTypes}".</exception>
+        /// Если в <see cref="UseBasicTypes"/> неожидаемое значение. С сообщением $"Неожидаемое значение {nameof(UseBasicTypes)}={UseBasicTypes}".</exception>
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
             if (IsInit)

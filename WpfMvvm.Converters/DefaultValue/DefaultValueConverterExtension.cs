@@ -19,7 +19,8 @@ namespace WpfMvvm.Converters
         /// <see langword="false"/> - </remarks>
         public bool IsWithNoExceptions { get; set; }
 
-        /// <summary>Конструктор по умолчанию.</summary>
+
+        /// <summary>Создаёт экземпляр <see cref="DefaultValueConverterExtension"/>.</summary>
         public DefaultValueConverterExtension() { }
 
         /// <summary>Конструктор с заданием значений свойствам.</summary>

@@ -21,6 +21,9 @@ namespace WpfMvvm.Converters
             throw new NotImplementedException();
         }
 
+        /// <summary>Создаёт экземпляр <see cref="GetTypeConverter"/>.</summary>
+        public GetTypeConverter() { }
+
         /// <summary>Экземпляр конвертера.</summary>
         public static GetTypeConverter Instance { get; } = new GetTypeConverter();
 

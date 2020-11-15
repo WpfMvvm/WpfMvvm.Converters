@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Markup;
-using System.Windows.Media.Animation;
 
 namespace WpfMvvm.Converters
 {
@@ -28,22 +21,20 @@ namespace WpfMvvm.Converters
             ValueType = valueType ?? throw new ArgumentNullException(nameof(valueType));
         }
 
-        /// <summary>Задаёт свойство <see cref="UseBasicTypes"/>, тип ключа и тип значения.</summary>
-        /// <param name="keyType">Тип ключа.</param>
+        /// <summary>Задаёт свойство <see cref="UseBasicTypes"/> и тип значения.</summary>
         /// <param name="valueType">Тип значения.</param>
         /// <param name="useBaseTypes">Значение для свойства <see cref="DictionaryTypeConverter.UseBasicTypes"/>.</param>
-        public DictionaryConverterExtension(bool useBaseTypes, Type keyType, Type valueType)
-            : this(keyType, valueType)
+        public DictionaryConverterExtension(bool useBaseTypes, Type valueType)
+            : this(useBaseTypes)
         {
-            UseBasicTypes = useBaseTypes;
+            ValueType = valueType;
         }
 
         /// <summary>Задаёт тип ключа, тип значения и свойство <see cref="UseBasicTypes"/>.</summary>
-        /// <param name="keyType">Тип ключа.</param>
         /// <param name="valueType">Тип значения.</param>
         /// <param name="useBaseTypes">Значение для свойства <see cref="DictionaryTypeConverter.UseBasicTypes"/>.</param>
-        public DictionaryConverterExtension(Type keyType, Type valueType, bool useBaseTypes)
-            : this(useBaseTypes, keyType, valueType)
+        public DictionaryConverterExtension(Type valueType, bool useBaseTypes)
+            : this(useBaseTypes, valueType)
         { }
 
         /// <summary>Создаёт экземпляр со свойствами по умолчанию.

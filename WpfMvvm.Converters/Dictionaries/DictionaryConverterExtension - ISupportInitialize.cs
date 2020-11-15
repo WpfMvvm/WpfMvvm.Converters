@@ -20,6 +20,9 @@ namespace WpfMvvm.Converters
             if (Dictionary.Count > 0 && Binding != null)
                 throw new Exception($"Нельзя одновремено задавать элементы словарю {nameof(Dictionary)} и привязку {nameof(Binding)}.");
 
+            if (UseBasicTypes != null && KeyType != null && KeyType != typeof(Type))
+                throw new Exception($"Если задано значение {nameof(UseBasicTypes)}, то {nameof(KeyType)} должен быть null или Type.");
+
             IsInit = false;
         }
     }

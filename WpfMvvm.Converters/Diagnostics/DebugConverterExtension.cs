@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Windows.Data;
 using System.Windows.Markup;
 
@@ -10,12 +11,13 @@ namespace WpfMvvm.Converters
     [MarkupExtensionReturnType(typeof(IValueConverter))]
     public class DebugConverterExtension : MarkupExtension
     {
-
         /// <summary>Конвертер для цепочки.<br/>
         /// Если <see langword="null"/> - возвращается <see cref="DebugConverter.Instance"/>.</summary>
+        [DefaultValue(null)]
         public IValueConverter Converter { get; set; }
 
-        /// <summary>Последовательность конвертеров в цепочке.</summary>
+        /// <summary>Последовательность конвертеров в цепочке, если задан конвертер в свойстве <see cref="Converter"/>.</summary>
+        [DefaultValue(AfterBeforeEnum.After)]
         public AfterBeforeEnum AfterBefore
         {
             get => afterBefore;
@@ -55,5 +57,38 @@ namespace WpfMvvm.Converters
 
             return new ReadOnlyChainOfConverters(list);
         }
+
+
+        /// <summary>Создаёт экземпляр <see cref="DebugConverterExtension"/> 
+        /// со значениями свойств по умолчанию.</summary>
+        public DebugConverterExtension() { }
+
+        /// <summary>Создаёт экземпляр <see cref="DebugConverterExtension"/> 
+        /// с заданным значением <see cref="AfterBefore"/>.</summary>
+        /// <param name="afterBefore">Значение для свойства <see cref="AfterBefore"/>.</param>
+        public DebugConverterExtension(AfterBeforeEnum afterBefore)
+            => AfterBefore = afterBefore;
+
+        /// <summary>Создаёт экземпляр <see cref="DebugConverterExtension"/> 
+        /// с заданным значением <see cref="Converter"/>.</summary>
+        /// <param name="converter">Значение для свойства <see cref="Converter"/>.</param>
+        public DebugConverterExtension(IValueConverter converter)
+            => Converter = converter;
+
+        /// <summary>Создаёт экземпляр <see cref="DebugConverterExtension"/> 
+        /// с заданными значениями свойств.</summary>
+        /// <param name="afterBefore">Значение для свойства <see cref="AfterBefore"/>.</param>
+        /// <param name="converter">Значение для свойства <see cref="Converter"/>.</param>
+        public DebugConverterExtension(AfterBeforeEnum afterBefore, IValueConverter converter)
+            : this(afterBefore)
+            => Converter = converter;
+
+        /// <summary>Создаёт экземпляр <see cref="DebugConverterExtension"/> 
+        /// с заданными значениями свойств.</summary>
+        /// <param name="converter">Значение для свойства <see cref="Converter"/>.</param>
+        /// <param name="afterBefore">Значение для свойства <see cref="AfterBefore"/>.</param>
+        public DebugConverterExtension(IValueConverter converter, AfterBeforeEnum afterBefore)
+            : this(afterBefore, converter)
+        { }
     }
 }

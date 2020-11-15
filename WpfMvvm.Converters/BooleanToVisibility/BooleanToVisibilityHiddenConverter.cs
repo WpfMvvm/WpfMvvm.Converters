@@ -34,7 +34,8 @@ namespace WpfMvvm.Converters
         public static BooleanToVisibilityHiddenConverter Instance { get; } = new BooleanToVisibilityHiddenConverter();
         /// <summary>Экземпляр конвертера инверсный к <see cref="Instance"/>.</summary>
         public static ReadOnlyChainOfConverters NotInstance { get; } = new ReadOnlyChainOfConverters(BooleanNotConverter.Instance, Instance);
+
+        /// <summary>Создаёт экземпляр <see cref="BooleanToVisibilityHiddenConverter"/>.</summary>
+        public BooleanToVisibilityHiddenConverter() { }
     }
-
-
 }

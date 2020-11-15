@@ -49,6 +49,9 @@ namespace WpfMvvm.Converters
                 return DependencyProperty.UnsetValue;
         }
 
+        /// <summary>Создаёт экземпляр <see cref="BooleanToVisibilityConverter"/>.</summary>
+        public BooleanToVisibilityConverter() { }
+
         /// <summary>Экземпляр конвертера.</summary>
         public static BooleanToVisibilityConverter Instance { get; } = new BooleanToVisibilityConverter();
         /// <summary>Экземпляр конвертера инверсный к <see cref="Instance"/>.</summary>

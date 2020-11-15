@@ -21,9 +21,10 @@ namespace WpfMvvm.Converters
         /// <summary>Словарь для заполнения в XAML.</summary>
         public IDictionary Dictionary { get; set; } = new Dictionary<object, object>();
 
-        /// <summary>Тип ключа словаря.<br/>
+        /// <summary>Тип ключа словаря<br/>
         /// Если <see langword="null"/> - используется значение по умолчанию.<br/>
-        /// По умолчанию - <see cref="object"/>.</summary>
+        /// По умолчанию, - <see cref="object"/>.</summary>
+        /// <remarks>Если заданно значение, то не должен быть или <see langword="null"/>, или <see cref="Type"/>.</remarks>
         [DefaultValue(typeof(object))]
         public Type KeyType
         {
@@ -66,6 +67,7 @@ namespace WpfMvvm.Converters
         /// <value><see langword="null"/> - <see cref="DictionaryConverter"/>,<br/>
         /// <see langword="true"/> - <see cref="DictionaryTypeConverter"/> с <see cref="DictionaryTypeConverter.UseBasicTypes"/>=<see langword="true"/>,<br/>
         /// <see langword="false"/> - <see cref="DictionaryTypeConverter"/> с <see cref="DictionaryTypeConverter.UseBasicTypes"/>=<see langword="false"/>.</value>
+        /// <remarks>Если заданно значение, то не должно задаваться значение для <see cref="KeyType"/>.</remarks>
         [DefaultValue(null)]
         public bool? UseBasicTypes { get; set; }
 
@@ -73,8 +75,17 @@ namespace WpfMvvm.Converters
         /// <summary>Изменение типа словаря <see cref="Dictionary"/>.</summary>
         private void ChangeTypeDictionary()
         {
+            if (UseBasicTypes != null && KeyType != null && KeyType != typeof(Type))
+                throw new Exception($"Если задано значение {nameof(UseBasicTypes)}, то {nameof(KeyType)} должен быть null или Type.");
+
+            var keyType = KeyType;
+            if (keyType == null)
+                keyType = UseBasicTypes == null
+                    ? typeof(object)
+                    : typeof(Type);
+
             var dictionaryType = typeof(Dictionary<,>);
-            var dictionaryClosedType = dictionaryType.MakeGenericType(KeyType ?? typeof(object), ValueType ?? typeof(object));
+            var dictionaryClosedType = dictionaryType.MakeGenericType(keyType, ValueType ?? typeof(object));
 
             Dictionary = (IDictionary)Activator.CreateInstance(dictionaryClosedType);
         }

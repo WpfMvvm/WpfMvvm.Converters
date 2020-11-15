@@ -1,13 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
 	<metadata>
-		<id>WpfMvvm.Converters</id>
+		<!--<id>WpfMvvm.Converters</id>
 		<version>0.0.0.6</version>
 		<title>WpfMvvm.Converters</title>
-		<authors>EldHasp</authors>
+		<authors>EldHasp</authors>-->
+		<id>$id$</id>
+		<version>$version$</version>
+		<title>$title$</title>
+		<authors>$author$</authors>
+		<owners>$author$</owners>
+
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<summary>WPF Конвертеры</summary>
-		<description>WPF Конвертеры</description>
+		<!--<description>WPF Конвертеры</description>-->
 		<copyright>Copyright ©  2020</copyright>
 		<!--<RepositoryType>git</RepositoryType>
 		<RepositoryUrl>https://github.com/WpfMvvm/WpfMvvm.Converters</RepositoryUrl>-->
@@ -16,16 +22,18 @@
 					branch="master" commit="71ddbb10a4084c471a41dd692e60de01e7a2bfd3"/>
 		<license type="expression">MIT</license>
 		<licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
-		<iconUrl>https://github.com/WpfMvvm/WpfMvvm.Ico/blob/main/Png/WpfMvvm.Converters.png</iconUrl>
-		<releaseNotes>Добавлен файл XML документации</releaseNotes>
-		<dependencies>
+		<iconUrl>https://github.com/WpfMvvm/WpfMvvm.Ico/blob/main/Png/WpfMvvm.AttachedProperties.png?raw=true</iconUrl>
+		<releaseNotes>Исправлен AssemblyCulture("")</releaseNotes>
+		<description>$description$</description>
+		<!--<dependencies>
 			<group targetFramework=".NETFramework4.8" />
-		</dependencies>
+		</dependencies>-->
 		<tags>WPF MVVM IValueConverter Conveter</tags>
-		<icon>WpfMvvm.Converters.png</icon>
+		<!--<icon>WpfMvvm.Converters.png</icon>-->
+		<language>ru-RU</language>
 	</metadata>
-	<files>
+	<!--<files>
 		<file src="WpfMvvm.Converters.png" />
 		<file src="WpfMvvm.Converters.xml" />
-	</files>
+	</files>-->
 </package>

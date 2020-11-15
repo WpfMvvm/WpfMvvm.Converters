@@ -14,5 +14,8 @@ namespace WpfMvvm.Converters
         /// <returns><see cref="EnumValuesConverter.Instance"/>.</returns>
         public override object ProvideValue(IServiceProvider serviceProvider)
             => EnumValuesConverter.Instance;
+
+        /// <summary>Создаёт экземпляр <see cref="EnumValuesConverterExtension"/>.</summary>
+        public EnumValuesConverterExtension() { }
     }
 }

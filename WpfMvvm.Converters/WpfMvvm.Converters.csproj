@@ -44,7 +44,8 @@
     <DocumentationFile>bin\NuGet\WpfMvvm.Converters.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>WpfMvvm.Converters.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
@@ -119,13 +120,6 @@
     <Compile Include="Dictionaries\DictionaryTypeConverter.cs" />
     <Compile Include="DefaultValue\DefaultValueConverter.cs" />
     <Compile Include="DefaultValue\DefaultValueConverterExtension.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="WpfMvvm.Converters.ico" />
-    <Content Include="WpfMvvm.Converters.xml" />
-    <Content Include="WpfMvvm.Converters.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

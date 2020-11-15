@@ -26,6 +26,9 @@ namespace WpfMvvm.Converters
             return value;
         }
 
+        /// <summary>Создаёт экземпляр <see cref="DebugConverter"/>.</summary>
+        public DebugConverter() { }
+
         /// <summary>Экземпляр конвертера.</summary>
         public static DebugConverter Instance { get; } = new DebugConverter();
     }

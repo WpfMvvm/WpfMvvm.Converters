@@ -14,5 +14,8 @@ namespace WpfMvvm.Converters
         /// <returns><see cref="GetTypeConverter.Instance"/>.</returns>
         public override object ProvideValue(IServiceProvider serviceProvider)
             => GetTypeConverter.Instance;
+
+        /// <summary>Создаёт экземпляр <see cref="GetTypeConverterExtension"/>.</summary>
+        public GetTypeConverterExtension() { }
     }
 }

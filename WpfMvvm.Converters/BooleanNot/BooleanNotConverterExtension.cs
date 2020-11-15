@@ -15,5 +15,8 @@ namespace WpfMvvm.Converters
         /// <returns>Экземпляр из <see cref="BooleanNotConverter.Instance"/>.</returns>
         public override object ProvideValue(IServiceProvider serviceProvider)
             => BooleanNotConverter.Instance;
+
+        /// <summary>Создаёт экземпляр <see cref="BooleanNotConverterExtension"/>.</summary>
+        public BooleanNotConverterExtension() { }
     }
 }

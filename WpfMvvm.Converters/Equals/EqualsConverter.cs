@@ -22,6 +22,9 @@ namespace WpfMvvm.Converters
             throw new NotImplementedException();
         }
 
+        /// <summary>Создаёт экземпляр <see cref="EqualsConverter"/>.</summary>
+        public EqualsConverter() { }
+
         /// <summary>Экземпляр конвертера.</summary>
         public static EqualsConverter Instance { get; } = new EqualsConverter();
 

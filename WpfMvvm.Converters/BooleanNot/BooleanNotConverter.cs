@@ -51,6 +51,9 @@ namespace WpfMvvm.Converters
             return DependencyProperty.UnsetValue;
         }
 
+        /// <summary>Создаёт экземпляр <see cref="BooleanNotConverter"/>.</summary>
+        public BooleanNotConverter() { }
+
         /// <summary>Экземпляр конвертера.</summary>
         public static BooleanNotConverter Instance { get; } = new BooleanNotConverter();
     }

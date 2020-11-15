@@ -25,6 +25,10 @@ namespace WpfMvvm.Converters
                 return parameter;
             return Binding.DoNothing;
         }
+
+        /// <summary>Создаёт экземпляр <see cref="EqualsTrueConverter"/>.</summary>
+        public EqualsTrueConverter() { }
+
         /// <summary>Экземпляр конвертера.</summary>
         public static EqualsTrueConverter Instance { get; } = new EqualsTrueConverter();
 

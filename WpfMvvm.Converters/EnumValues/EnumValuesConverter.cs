@@ -52,6 +52,9 @@ namespace WpfMvvm.Converters
             throw new NotImplementedException();
         }
 
+        /// <summary>Создаёт экземпляр <see cref="EnumValuesConverter"/>.</summary>
+        public EnumValuesConverter() { }
+
         /// <summary>Экземпляр конвертера.</summary>
         public static EnumValuesConverter Instance { get; } = new EnumValuesConverter();
     }

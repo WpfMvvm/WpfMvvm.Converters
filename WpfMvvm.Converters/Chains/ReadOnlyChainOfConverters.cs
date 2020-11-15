@@ -20,10 +20,11 @@ namespace WpfMvvm.Converters
         /// <param name="converters">Последовательность конвертеров.</param>
         public ReadOnlyChainOfConverters(IEnumerable<IValueConverter> converters)
         {
-            if (converters == null || !converters.Any(cnv => cnv != null))
-                 throw new ArgumentNullException(nameof(converters), "Должен быть передан хоть один конвертер");
+            Converters = converters?.Where(cnv => cnv != null).ToList().AsReadOnly();
 
-            Converters = converters.Where(cnv => cnv != null).ToList().AsReadOnly();
+            if ((Converters?.Count ?? 0) == 0)
+                throw new ArgumentNullException(nameof(converters), "Должен быть передан хоть один конвертер");
+
         }
 
         /// <summary>Создаёт конвертер из массива конвертеров.</summary>

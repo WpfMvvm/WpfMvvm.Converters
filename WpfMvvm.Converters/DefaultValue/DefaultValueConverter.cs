@@ -15,10 +15,10 @@ namespace WpfMvvm.Converters
     public class DefaultValueConverter : IValueConverter
     {
         /// <summary>Тип свойства источника. Если не задан, то используется targetType из <see cref="ConvertBack(object, Type, object, CultureInfo)"/>.</summary>
-        public Type SourceType { get;}
+        public Type SourceType { get; }
 
         /// <summary>Тип целевого свойства. Если не задан, то используется targetType из <see cref="Convert(object, Type, object, CultureInfo)"/>.</summary>
-        public Type TargetType { get;}
+        public Type TargetType { get; }
 
         /// <summary>Создаёт экземпляр конвертера с заданными типами.</summary>
         /// <param name="sourceType">Значение для <see cref="SourceType"/>.</param>
@@ -72,9 +72,12 @@ namespace WpfMvvm.Converters
             }
         }
 
+        /// <summary>Создаёт экземпляр <see cref="DefaultValueConverter"/>.</summary>
+        public DefaultValueConverter() { }
+
         /// <summary>Возвращает internal <see href="https://referencesource.microsoft.com/PresentationFramework/R/a224c73beb6d4d79.html">DefaultValueConverter</see>
         /// в оболочке с обработкой исключений.</summary>
-        public static DefaultValueConverter Instance{ get; }
-            = new DefaultValueConverter(null, null);
+        public static DefaultValueConverter Instance { get; }
+                = new DefaultValueConverter(null, null);
     }
 }
