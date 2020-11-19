@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
 	<metadata>
-		<!--<id>WpfMvvm.Converters</id>
-		<version>0.0.0.6</version>
-		<title>WpfMvvm.Converters</title>
-		<authors>EldHasp</authors>-->
 		<id>$id$</id>
 		<version>$version$</version>
 		<title>$title$</title>
@@ -13,27 +9,21 @@
 
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<summary>WPF Конвертеры</summary>
-		<!--<description>WPF Конвертеры</description>-->
 		<copyright>Copyright ©  2020</copyright>
-		<!--<RepositoryType>git</RepositoryType>
-		<RepositoryUrl>https://github.com/WpfMvvm/WpfMvvm.Converters</RepositoryUrl>-->
 		<!--<projectUrl>https://github.com/WpfMvvm/WpfMvvm.Converters</projectUrl>-->
 		<repository type="git" url="https://github.com/WpfMvvm/WpfMvvm.Converters"
-					branch="master" commit="71ddbb10a4084c471a41dd692e60de01e7a2bfd3"/>
+					branch="master" commit="d389fdeff64e989985a06fdbb0b995102c9ef4ab"/>
 		<license type="expression">MIT</license>
 		<licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
 		<iconUrl>https://github.com/WpfMvvm/WpfMvvm.Ico/blob/main/Png/WpfMvvm.AttachedProperties.png?raw=true</iconUrl>
-		<releaseNotes>Исправлен AssemblyCulture("")</releaseNotes>
+		<releaseNotes>
+			Убрана культура сборки AssemblyCulture("").
+			Изменена ссылка на иконку NuGet пакета.
+			Добавлены конструкторы по умолчанию во все типы для задания им тегов XML документации.
+			В расширении разметки DictionaryConverterExtension  добавлена зависимость типа ключа словаря от значения вида поиска по нему.
+		</releaseNotes>
 		<description>$description$</description>
-		<!--<dependencies>
-			<group targetFramework=".NETFramework4.8" />
-		</dependencies>-->
 		<tags>WPF MVVM IValueConverter Conveter</tags>
-		<!--<icon>WpfMvvm.Converters.png</icon>-->
 		<language>ru-RU</language>
 	</metadata>
-	<!--<files>
-		<file src="WpfMvvm.Converters.png" />
-		<file src="WpfMvvm.Converters.xml" />
-	</files>-->
 </package>

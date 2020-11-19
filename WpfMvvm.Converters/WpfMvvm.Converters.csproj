@@ -76,8 +76,8 @@
       <DependentUpon>ReadOnlyChainOfConverters.cs</DependentUpon>
     </Compile>
     <Compile Include="Diagnostics\AfterBeforeEnum.cs" />
-    <Compile Include="Diagnostics\DebugConverter.cs" />
-    <Compile Include="Diagnostics\DebugConverterExtension.cs" />
+    <Compile Include="Diagnostics\TraceConverter.cs" />
+    <Compile Include="Diagnostics\TraceConverterExtension.cs" />
     <Compile Include="Dictionaries\DictionaryConverter - Constructors.cs">
       <DependentUpon>DictionaryConverter.cs</DependentUpon>
     </Compile>

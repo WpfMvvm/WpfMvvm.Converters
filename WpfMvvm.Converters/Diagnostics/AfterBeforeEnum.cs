@@ -2,7 +2,7 @@
 
 namespace WpfMvvm.Converters
 {
-    /// <summary>Перечисление расположения <see cref="DebugConverter"/> по отношению к другому конвертеру.</summary>
+    /// <summary>Перечисление расположения <see cref="TraceConverter"/> по отношению к другому конвертеру.</summary>
     [Flags]
     public enum AfterBeforeEnum
     {
