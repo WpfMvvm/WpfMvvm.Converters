@@ -105,6 +105,7 @@
     <Compile Include="EnumValues\EnumValuesConverterExtension.cs" />
     <Compile Include="Equals\EqualsConverter.cs" />
     <Compile Include="Equals\EqualsTrueConverter.cs" />
+    <Compile Include="Equals\EqualsConverterExtension.cs" />
     <Compile Include="Equals\EqualsTrueConverterExtension.cs" />
     <Compile Include="GetType\GetTypeConverter.cs" />
     <Compile Include="GetType\GetTypeConverterExtension.cs" />
