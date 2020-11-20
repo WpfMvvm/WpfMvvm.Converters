@@ -32,7 +32,7 @@ namespace WpfMvvm.Converters
         /// <see langword="false"/> - <see cref="EqualsConverter.NotInstance"/>.</returns>
         public override object ProvideValue(IServiceProvider serviceProvider)
             => IsTrue 
-            ? (IValueConverter) EqualsConverter.Instance
+            ? EqualsConverter.Instance
             : EqualsConverter.NotInstance;
     }
 }
