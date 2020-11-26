@@ -84,9 +84,6 @@
     <Compile Include="Dictionaries\DictionaryConverter - Freezable, Properties.cs">
       <DependentUpon>DictionaryConverter.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dictionaries\DictionaryConverter - IDictionary.cs">
-      <DependentUpon>DictionaryConverter.cs</DependentUpon>
-    </Compile>
     <Compile Include="Dictionaries\DictionaryConverterExtension - Constructors.cs">
       <DependentUpon>DictionaryConverterExtension .cs</DependentUpon>
     </Compile>

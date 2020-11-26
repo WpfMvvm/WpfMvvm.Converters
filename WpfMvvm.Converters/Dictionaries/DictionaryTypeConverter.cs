@@ -60,12 +60,13 @@ namespace WpfMvvm.Converters
                     return null;
                 else
                 {
-                    keyType = typeof(object);
+                    Type baseType = typeof(object);
                     foreach (Type tp in dictionary.Keys.OfType<Type>().Where(t => t.IsAssignableFrom(keyType)))
                     {
-                        if (keyType.IsAssignableFrom(tp))
-                            keyType = tp;
+                        if (baseType.IsAssignableFrom(tp))
+                            baseType = tp;
                     }
+                    keyType = baseType;
                 }
 
             }
