@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\WpfMvvm.Converters.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,7 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <NoWarn>NU5128</NoWarn>
+    <NoWarn>NU5128, NU5048</NoWarn>
     <DocumentationFile>bin\Release\WpfMvvm.Converters.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'NuGet|AnyCPU'">
@@ -87,14 +88,11 @@
     <Compile Include="Dictionaries\DictionaryConverterExtension - Constructors.cs">
       <DependentUpon>DictionaryConverterExtension .cs</DependentUpon>
     </Compile>
-    <Compile Include="Dictionaries\DictionaryConverterExtension - IDictionary.cs">
-      <DependentUpon>DictionaryConverterExtension .cs</DependentUpon>
-    </Compile>
     <Compile Include="Dictionaries\DictionaryConverter.cs" />
-    <Compile Include="Dictionaries\DictionaryConverterExtension - ISupportInitialize.cs">
+    <Compile Include="Dictionaries\DictionaryConverterExtension - Properties.cs">
       <DependentUpon>DictionaryConverterExtension .cs</DependentUpon>
     </Compile>
-    <Compile Include="Dictionaries\DictionaryConverterExtension - Properties.cs">
+    <Compile Include="Dictionaries\DictionaryConverterExtension - UseTypesEnum.cs">
       <DependentUpon>DictionaryConverterExtension .cs</DependentUpon>
     </Compile>
     <Compile Include="Dictionaries\DictionaryConverterExtension .cs" />

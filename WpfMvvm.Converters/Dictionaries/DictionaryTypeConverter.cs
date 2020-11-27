@@ -86,7 +86,7 @@ namespace WpfMvvm.Converters
         /// <see cref="UseBasicTypes"/>=<see langword="true"/>.<br/>
         /// Словарь должен передаваться через parameters метода 
         /// <see cref="DictionaryConverter.Convert(object, Type, object, CultureInfo)"/>.</summary>
-        public static DictionaryTypeConverter InstanceUseBaseTypes { get; }
+        public static DictionaryTypeConverter InstanceBaseTypes { get; }
 
         /// <summary>Экземпляр конвертера с <see cref="UseBasicTypes"/>=<see langword="false"/>.<br/>
         /// Экземпляр заморожен.<br/>
@@ -95,17 +95,17 @@ namespace WpfMvvm.Converters
         /// <see cref="UseBasicTypes"/>=<see langword="false"/>.<br/>
         /// Словарь должен передаваться через parameters метода
         /// <see cref="DictionaryConverter.Convert(object, Type, object, CultureInfo)"/>.</summary>
-        public static DictionaryTypeConverter InstanceNotUseBaseTypes { get; }
+        public static DictionaryTypeConverter InstanceEqualsTypes { get; }
 
-        /// <summary>Записывает в <see cref="InstanceUseBaseTypes"/> и <see cref="InstanceNotUseBaseTypes"/>
+        /// <summary>Записывает в <see cref="InstanceBaseTypes"/> и <see cref="InstanceEqualsTypes"/>
         /// статические замороженные экземпляры конвертеров.</summary>
         static DictionaryTypeConverter()
         {
-            InstanceUseBaseTypes = new DictionaryTypeConverter(null) { UseBasicTypes = true };
-            InstanceUseBaseTypes.Freeze();
+            InstanceBaseTypes = new DictionaryTypeConverter(null) { UseBasicTypes = true };
+            InstanceBaseTypes.Freeze();
 
-            InstanceNotUseBaseTypes = new DictionaryTypeConverter(null) { UseBasicTypes = false };
-            InstanceNotUseBaseTypes.Freeze();
+            InstanceEqualsTypes = new DictionaryTypeConverter(null) { UseBasicTypes = false };
+            InstanceEqualsTypes.Freeze();
         }
 
     }
