@@ -40,11 +40,13 @@ namespace WpfMvvm.Converters
             => dictionary[key];
 
         /// <summary>Не реализован.</summary>
-        /// <returns>Всегда исключение <see cref="NotImplementedException"/>.</returns>
-        /// <exception cref="NotImplementedException">Всегда.</exception>
+        /// <returns>Всегда исключение <see cref="NotImplementedConvertBackException"/>.</returns>
+        /// <exception cref="NotImplementedException">Всегда <see cref="NotImplementedConvertBackException"/>.</exception>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
+            => throw NotImplementedConvertBackException;
+
+        /// <summary>Ошибка при обращении к методу <see cref="ConvertBack(object, Type, object, CultureInfo)"/>.</summary>
+        public static NotImplementedException NotImplementedConvertBackException { get; }
+            = new NotImplementedException($"Метод {nameof(ConvertBack)} не реализован.");
     }
 }

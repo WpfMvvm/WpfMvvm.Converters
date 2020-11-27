@@ -23,7 +23,7 @@ namespace WpfMvvm.Converters
             Converters = converters?.Where(cnv => cnv != null).ToList().AsReadOnly();
 
             if ((Converters?.Count ?? 0) == 0)
-                throw new ArgumentNullException(nameof(converters), "Должен быть передан хоть один конвертер");
+                throw EmptyConvertersException;
 
         }
 
@@ -78,6 +78,8 @@ namespace WpfMvvm.Converters
             }
             return value;
         }
-    }
 
+        /// <summary>Ошибка при передаче в конструктор <see cref="ReadOnlyChainOfConverters"/> пустого списка конвертеров.</summary>
+        public static ArgumentNullException EmptyConvertersException { get; } = new ArgumentNullException("converters", "Должен быть передан хоть один конвертер");
+    }
 }

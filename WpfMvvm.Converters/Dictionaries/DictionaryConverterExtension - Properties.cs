@@ -21,10 +21,14 @@ namespace WpfMvvm.Converters
             set
             {
                 if (!Enum.IsDefined(typeof(UseTypesEnum), value))
-                    throw new ArgumentException("Недопустимое значение", nameof(value));
+                    throw SetUseTypesException;
                 _useTypes = value;
             }
         }
         private UseTypesEnum _useTypes;
+
+        /// <summary>Ошибка при присвоении свойству <see cref="UseTypes"/> недопустимого значения.</summary>
+        public static ArgumentException SetUseTypesException { get; } = new ArgumentException("Недопустимое значение", nameof(UseTypes));
     }
+
 }

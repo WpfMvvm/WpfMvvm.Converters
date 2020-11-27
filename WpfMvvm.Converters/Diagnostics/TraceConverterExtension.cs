@@ -29,7 +29,7 @@ namespace WpfMvvm.Converters
             set
             {
                 if (!Enum.IsDefined(typeof(AfterBeforeEnum), value))
-                    throw new ArgumentException("Недопустимое значение.", nameof(value));
+                    throw SetAfterBefore;
 
                 afterBefore = value;
             }
@@ -96,52 +96,7 @@ namespace WpfMvvm.Converters
             : this(title)
             => AfterBefore = afterBefore;
 
-        /// <summary>Создаёт экземпляр <see cref="TraceConverterExtension"/> 
-        /// с заданным значением <see cref="Converter"/>.</summary>
-        /// <param name="converter">Значение для свойства <see cref="Converter"/>.</param>
-        public TraceConverterExtension(IValueConverter converter)
-            => Converter = converter;
-
-        /// <summary>Создаёт экземпляр <see cref="TraceConverterExtension"/> 
-        /// с заданным значением <see cref="Title"/> и <see cref="Converter"/>.</summary>
-        /// <param name="title">Значение для свойства <see cref="Title"/>.</param>
-        /// <param name="converter">Значение для свойства <see cref="Converter"/>.</param>
-        public TraceConverterExtension(string title, IValueConverter converter)
-                   : this(title)
-             => Converter = converter;
-
-        /// <summary>Создаёт экземпляр <see cref="TraceConverterExtension"/> 
-        /// с заданными значениями свойств.</summary>
-        /// <param name="afterBefore">Значение для свойства <see cref="AfterBefore"/>.</param>
-        /// <param name="converter">Значение для свойства <see cref="Converter"/>.</param>
-        public TraceConverterExtension(AfterBeforeEnum afterBefore, IValueConverter converter)
-            : this(afterBefore)
-            => Converter = converter;
-
-        /// <summary>Создаёт экземпляр <see cref="TraceConverterExtension"/> 
-        /// с заданными значениями свойств.</summary>
-        /// <param name="title">Значение для свойства <see cref="Title"/>.</param>
-        /// <param name="afterBefore">Значение для свойства <see cref="AfterBefore"/>.</param>
-        /// <param name="converter">Значение для свойства <see cref="Converter"/>.</param>
-        public TraceConverterExtension(string title, AfterBeforeEnum afterBefore, IValueConverter converter)
-            : this(title, afterBefore)
-            => Converter = converter;
-
-        /// <summary>Создаёт экземпляр <see cref="TraceConverterExtension"/> 
-        /// с заданными значениями свойств.</summary>
-        /// <param name="converter">Значение для свойства <see cref="Converter"/>.</param>
-        /// <param name="afterBefore">Значение для свойства <see cref="AfterBefore"/>.</param>
-        public TraceConverterExtension(IValueConverter converter, AfterBeforeEnum afterBefore)
-            : this(afterBefore, converter)
-        { }
-
-        /// <summary>Создаёт экземпляр <see cref="TraceConverterExtension"/> 
-        /// с заданными значениями свойств.</summary>
-        /// <param name="title">Значение для свойства <see cref="Title"/>.</param>
-        /// <param name="converter">Значение для свойства <see cref="Converter"/>.</param>
-        /// <param name="afterBefore">Значение для свойства <see cref="AfterBefore"/>.</param>
-        public TraceConverterExtension(string title, IValueConverter converter, AfterBeforeEnum afterBefore)
-            : this(title, afterBefore, converter)
-        { }
+        /// <summary>Ошибка при присвоении свойству <see cref="AfterBefore"/> недопустимого значения.</summary>
+        public static ArgumentException SetAfterBefore { get; } = new ArgumentException("Недопустимое значение.", nameof(AfterBefore));
     }
 }

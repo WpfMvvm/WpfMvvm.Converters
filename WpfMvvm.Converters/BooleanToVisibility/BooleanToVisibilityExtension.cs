@@ -23,7 +23,7 @@ namespace WpfMvvm.Converters
         public BooleanToVisibilityExtension(BooleanToVisibilityModeEnum mode)
         {
             if (!Enum.IsDefined(typeof(BooleanToVisibilityModeEnum), mode))
-                throw new ArgumentException(nameof(Mode));
+                throw SetModeException;
             Mode = mode;
         }
 
@@ -51,9 +51,12 @@ namespace WpfMvvm.Converters
                 case BooleanToVisibilityModeEnum.NotHiden:
                     return BooleanToVisibilityHiddenConverter.NotInstance;
                 default:
-                    throw new ArgumentException(nameof(Mode));
+                    throw SetModeException;
             }
 
         }
+
+        /// <summary>Ошибка при присвоении свойству <see cref="Mode"/> недопустимого значения.</summary>
+        public static ArgumentException SetModeException { get; } = new ArgumentException("Недопустимое значение", nameof(Mode));
     }
 }

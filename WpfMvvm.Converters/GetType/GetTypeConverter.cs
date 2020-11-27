@@ -8,18 +8,11 @@ namespace WpfMvvm.Converters
     /// <returns><c>value?.GetType()</c></returns>
     /// <remarks>Обратное преобразование не реализовано.</remarks>
     [ValueConversion(typeof(object), typeof(Type))]
-    public class GetTypeConverter : IValueConverter
+    public class GetTypeConverter : WithoutConvertBackConverter
     {
         /// <inheritdoc cref="IValueConverter.Convert(object, Type, object, CultureInfo)"/>
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
             => value?.GetType();
-
-        /// <summary>Не реализован.</summary>
-        /// <exception cref="NotImplementedException">Всегда.</exception>
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
 
         /// <summary>Создаёт экземпляр <see cref="GetTypeConverter"/>.</summary>
         public GetTypeConverter() { }

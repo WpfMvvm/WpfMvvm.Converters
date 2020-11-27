@@ -11,10 +11,10 @@ namespace WpfMvvm.Converters
     /// </returns>
     [ValueConversion(typeof(Enum), typeof(Array))]
 
-    public class EnumValuesConverter : IValueConverter
+    public class EnumValuesConverter : WithoutConvertBackConverter
     {
         /// <inheritdoc cref="IValueConverter.Convert(object, Type, object, CultureInfo)"/>
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             Type typeEnum = null;
 
@@ -27,7 +27,7 @@ namespace WpfMvvm.Converters
                     typeEnum = value.GetType();
             }
 
-            // Если из value не получилось получить Enum, то проевряется parameter
+            // Если из value не получилось получить Enum, то проверяется parameter
             if ((typeEnum == null || !typeEnum.IsEnum) && parameter != null)
             {
                 if (parameter is Type type)
@@ -43,13 +43,6 @@ namespace WpfMvvm.Converters
             else
                 return DependencyProperty.UnsetValue;
 
-        }
-
-        /// <summary>Не реализован.</summary>
-        /// <exception cref="NotImplementedException">Всегда.</exception>
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
         }
 
         /// <summary>Создаёт экземпляр <see cref="EnumValuesConverter"/>.</summary>

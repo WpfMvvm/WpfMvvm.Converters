@@ -114,6 +114,7 @@
     <Compile Include="Dictionaries\DictionaryTypeConverter.cs" />
     <Compile Include="DefaultValue\DefaultValueConverter.cs" />
     <Compile Include="DefaultValue\DefaultValueConverterExtension.cs" />
+    <Compile Include="WithoutConvertBackConverter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

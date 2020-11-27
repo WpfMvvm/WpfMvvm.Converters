@@ -42,7 +42,7 @@ namespace WpfMvvm.Converters
                     case UseTypesEnum.EqualsType:
                         return DictionaryTypeConverter.InstanceEqualsTypes;
                     default:
-                        throw new Exception($"Неожидаемое значение {nameof(UseTypes)}={UseTypes}");
+                        throw SetUseTypesException;
                 }
             }
 
