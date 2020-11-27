@@ -29,14 +29,9 @@ namespace WpfMvvm.Converters
         /// <see cref="UseTypesEnum.BaseType"/> - новый экземпляр <see cref="DictionaryTypeConverter"/> с <see cref="DictionaryTypeConverter.UseBasicTypes"/>=<see langword="true"/>;<br/>
         /// <see cref="UseTypesEnum.EqualsType"/> - новый экземпляр <see cref="DictionaryTypeConverter"/> с <see cref="DictionaryTypeConverter.UseBasicTypes"/>=<see langword="false"/>.<br/>
         /// В экземплярах конвертеров свойство <see cref="DictionaryConverter.Dictionary"/> привязывается по привязке <see cref="Binding"/>.</returns>
-        ///// <exception cref="Exception">Если не закончена инициализация объекта. С сообщением "Инициализация объекта не завершена."<br/>
-        ///// Если в <see cref="UseTypes"/> неожидаемое значение. С сообщением $"Неожидаемое значение {nameof(UseBasicTypes)}={UseBasicTypes}".</exception>
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
-            //if (IsInit)
-            //    throw new Exception("Инициализация объекта не завершена.");
-
-            if (/*Dictionary.Count == 0 &&*/ Binding == null)
+            if (Binding == null)
             {
                 switch (UseTypes)
                 {
@@ -54,15 +49,7 @@ namespace WpfMvvm.Converters
             DictionaryConverter converter = UseTypes == UseTypesEnum.NotType
                 ? new DictionaryConverter()
                 : new DictionaryTypeConverter() { UseBasicTypes = UseTypes == UseTypesEnum.BaseType};
-
-            //if (Binding == null)
-            //{
-            //    converter.Dictionary = Dictionary;
-            //}
-            //else
-            //{
                 BindingOperations.SetBinding(converter, DictionaryConverter.DictionaryProperty, Binding);
-            //}
 
             return converter;
         }

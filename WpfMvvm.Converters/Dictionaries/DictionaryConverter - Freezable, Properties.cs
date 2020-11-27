@@ -33,8 +33,5 @@ namespace WpfMvvm.Converters
         /// Экземпляр заморожен: свойство <see cref="Dictionary"/>=<see langword="null"/> и неизменяемо.<br/>
         /// Словарь должен передаваться через parameters метода <see cref="Convert(object, Type, object, CultureInfo)"/>.</summary>
         public static DictionaryConverter Instance { get; }
-
-
     }
-
 }
