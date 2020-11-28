@@ -1,5 +1,5 @@
 # V.0.0.0.8 [27 ноября 2020г.]
-Версия первой публикации темы [Библиотека элементов для реализации WPF MVVM Решений](https://www.cyberforum.ru/wpf-silverlight/thread2738784.html)
+Версия первой публикации темы [Библиотека элементов для реализации WPF MVVM Решений](https://www.cyberforum.ru/wpf-silverlight/thread2738784.html).
 
 В составе пакета конвертеры:
 1.	[BooleanNotConverter](https://www.cyberforum.ru/wpf-silverlight/thread2738784.html#post15042491) - логическое отрицание.
