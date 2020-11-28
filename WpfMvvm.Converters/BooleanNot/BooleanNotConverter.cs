@@ -26,12 +26,10 @@ namespace WpfMvvm.Converters
         /// Если <paramref name="targetType"/>=<see cref="string"/>, то выходное значение конвертируется в строку.</returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-
             if (value.TryParse(out bool valBool))
                 return (!valBool).ConvertToType(targetType, culture);
 
             return DependencyProperty.UnsetValue;
-
         }
 
         /// <summary>Инвертирует полученное логическое значение.</summary>

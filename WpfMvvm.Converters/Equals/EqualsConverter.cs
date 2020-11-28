@@ -17,8 +17,19 @@ namespace WpfMvvm.Converters
         /// <param name="culture">Культура конвертера. Не используется.</param>
         /// <returns>Возвращается сумма (XOR) резульатат сравнения <paramref name="value"/> с <paramref name="parameter"/>
         /// и <see cref="IsNot"/> преобразованная к типу целевого свойства.</returns>
+        /// <remarks>Если типы значения и параметра различны, то значение преобразуется в тип параметра.</remarks>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
+            if (value != null && parameter != null)
+            {
+                Type valueType = value.GetType();
+                Type parameterType = parameter.GetType();
+                if (valueType != parameterType)
+                    value = StaticMethodsOfConverters
+                            .GetDefaultValueConverter(parameterType, valueType, false)
+                            .Convert(value, parameterType, null, culture);
+            }
+
             return (Equals(value, parameter) ^ IsNot).ConvertToType(targetType, culture);
         }
 

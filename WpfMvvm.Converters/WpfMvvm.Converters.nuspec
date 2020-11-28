@@ -10,17 +10,14 @@
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<summary>WPF Конвертеры</summary>
 		<copyright>Copyright ©  2020</copyright>
-		<!--<projectUrl>https://github.com/WpfMvvm/WpfMvvm.Converters</projectUrl>-->
+		<projectUrl>https://www.cyberforum.ru/wpf-silverlight/thread2738784.html</projectUrl>
 		<repository type="git" url="https://github.com/WpfMvvm/WpfMvvm.Converters"
-					branch="master" commit="d389fdeff64e989985a06fdbb0b995102c9ef4ab"/>
+					branch="master" commit="69369a6b21d8fa0044030df6723b004608542d8a"/>
 		<license type="expression">MIT</license>
 		<licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
 		<iconUrl>https://github.com/WpfMvvm/WpfMvvm.Ico/blob/main/Png/WpfMvvm.AttachedProperties.png?raw=true</iconUrl>
 		<releaseNotes>
-			Убрана культура сборки AssemblyCulture("").
-			Изменена ссылка на иконку NuGet пакета.
-			Добавлены конструкторы по умолчанию во все типы для задания им тегов XML документации.
-			В расширении разметки DictionaryConverterExtension  добавлена зависимость типа ключа словаря от значения вида поиска по нему.
+			Версия перед публикацией гайда на CyberForum.ru
 		</releaseNotes>
 		<description>$description$</description>
 		<tags>WPF MVVM IValueConverter Conveter</tags>
