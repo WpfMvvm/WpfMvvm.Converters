@@ -100,6 +100,8 @@
     <Compile Include="EnumValues\EnumValuesConverterExtension.cs" />
     <Compile Include="Equals\EqualsConverter.cs" />
     <Compile Include="Equals\EqualsConverterExtension.cs" />
+    <Compile Include="Expression\ExpressionConverter.cs" />
+    <Compile Include="Expression\ExpressionConverterExtension.cs" />
     <Compile Include="GetType\GetTypeConverter.cs" />
     <Compile Include="GetType\GetTypeConverterExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,6 +117,8 @@
     <Compile Include="DefaultValue\DefaultValueConverter.cs" />
     <Compile Include="DefaultValue\DefaultValueConverterExtension.cs" />
     <Compile Include="WithoutConvertBackConverter.cs" />
+    <Compile Include="WithoutConvertBackMultiConverter.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

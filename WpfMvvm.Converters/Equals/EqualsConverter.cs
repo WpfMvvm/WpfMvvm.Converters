@@ -17,7 +17,9 @@ namespace WpfMvvm.Converters
         /// <param name="culture">Культура конвертера. Не используется.</param>
         /// <returns>Возвращается сумма (XOR) резульатат сравнения <paramref name="value"/> с <paramref name="parameter"/>
         /// и <see cref="IsNot"/> преобразованная к типу целевого свойства.</returns>
-        /// <remarks>Если типы значения и параметра различны, то значение преобразуется в тип параметра.</remarks>
+        /// <remarks>Если типы значения и параметра различны, то значение преобразуется в тип параметра.<br/>
+        /// Если сравниваются строки (это наиболее частый случай), надо принять во внимание,
+        /// что <see cref="object.Equals(object, object)"/> выполняет регистрочувствительное сравнение.</remarks>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value != null && parameter != null)
@@ -26,7 +28,7 @@ namespace WpfMvvm.Converters
                 Type parameterType = parameter.GetType();
                 if (valueType != parameterType)
                     value = StaticMethodsOfConverters
-                            .GetDefaultValueConverter(parameterType, valueType, false)
+                            .GetDefaultValueConverter(valueType, parameterType, false)
                             .Convert(value, parameterType, null, culture);
             }
 
@@ -58,7 +60,7 @@ namespace WpfMvvm.Converters
         public EqualsConverter(bool isNot) => IsNot = isNot;
 
         /// <summary>Создаёт экземпляр <see cref="EqualsConverter"/>.</summary>
-        public EqualsConverter() : this (false) { }
+        public EqualsConverter() : this(false) { }
 
         /// <summary>Экземпляр конвертера.</summary>
         public static EqualsConverter Instance { get; } = new EqualsConverter();

@@ -16,11 +16,9 @@
 		<license type="expression">MIT</license>
 		<licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
 		<iconUrl>https://github.com/WpfMvvm/WpfMvvm.Ico/blob/main/Png/WpfMvvm.AttachedProperties.png?raw=true</iconUrl>
-		<releaseNotes>
-			Версия перед публикацией гайда на CyberForum.ru
-		</releaseNotes>
+		<releaseNotes>https://github.com/WpfMvvm/WpfMvvm.Converters/blob/master/ReleaseNotes.md</releaseNotes>
 		<description>$description$</description>
-		<tags>WPF MVVM IValueConverter Conveter</tags>
+		<tags>WPF MVVM IValueConverter IMultiValueConverter Converter</tags>
 		<language>ru-RU</language>
 	</metadata>
 </package>
