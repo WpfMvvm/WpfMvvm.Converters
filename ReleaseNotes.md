@@ -20,4 +20,5 @@
 Изменена реализация EqualsConverter: в случае если значение и параметр имеют разные типы, то перед сравнением значение преобразуется к типу параметра через DefaultValueConverter.
 
 Добавлен конвертер:
+
 13. [ExpressionConverter](https://www.cyberforum.ru/wpf-silverlight/thread2738784.html#post15045377) - вычисление простых арифметических выражений.

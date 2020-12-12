@@ -15,7 +15,7 @@
 					branch="master" commit="69369a6b21d8fa0044030df6723b004608542d8a"/>
 		<license type="expression">MIT</license>
 		<licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
-		<iconUrl>https://github.com/WpfMvvm/WpfMvvm.Ico/blob/main/Png/WpfMvvm.AttachedProperties.png?raw=true</iconUrl>
+		<iconUrl>https://github.com/WpfMvvm/WpfMvvm.Ico/blob/main/Png/WpfMvvm.Converters.png?raw=true</iconUrl>
 		<releaseNotes>https://github.com/WpfMvvm/WpfMvvm.Converters/blob/master/ReleaseNotes.md</releaseNotes>
 		<description>$description$</description>
 		<tags>WPF MVVM IValueConverter IMultiValueConverter Converter</tags>
